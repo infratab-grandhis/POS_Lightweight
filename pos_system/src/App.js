@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Home from './Pages/Home';
+import Products from './Pages/Products';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
-          {/* <Route path="/products" element={<Products/>} /> */}
+          <Route path="/products" element={<Products/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -7,17 +7,17 @@ import pages from './Constants.js';
 
 const containerStyles = {
     'display': 'flex',
-    'flex-direction': 'column',
-    'justify-content': 'center',
-    'align-items': 'center',
+    'flexDirection': 'column',
+    'justifyContent': 'center',
+    'alignItems': 'center',
     'margin': "50% auto"
 }
 
 const buttonStyles = {
-    'background-color': '#217EF9',
+    'backgroundColor': '#217EF9',
     'padding': '10px',
     'color': '#ffff',
-    'border-radius': '10px',
+    'borderRadius': '10px',
     'border': 'none',
     'cursor':'pointer'
 }

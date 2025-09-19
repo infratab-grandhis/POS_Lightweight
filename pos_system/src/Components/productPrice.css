@@ -1,0 +1,24 @@
+.menu {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+
+.menu-header {
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.menu-item,
+.menu input,
+.menu div {
+    padding: 6px 0;
+}
+
+.menu input {
+    width: 70px;
+    padding: 4px;
+}
