@@ -1,0 +1,42 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import OuterLayout from '../Layouts/OuterLayout.js';
+import pages from './Constants.js';
+
+
+const containerStyles = {
+    'display': 'flex',
+    'flex-direction': 'column',
+    'justify-content': 'center',
+    'align-items': 'center',
+    'margin': "50% auto"
+}
+
+const buttonStyles = {
+    'background-color': '#217EF9',
+    'padding': '10px',
+    'color': '#ffff',
+    'border-radius': '10px',
+    'border': 'none',
+    'cursor':'pointer'
+}
+
+const Home = () => {
+    const navigate = useNavigate();
+    
+    const navigateToProductsPage = () => {
+        navigate(pages?.products);
+    }
+
+    return (
+        <OuterLayout>
+            <div style={containerStyles}>
+                <h3>Welcome To the Food-Truck-POS</h3>
+                <button style={buttonStyles} onClick={navigateToProductsPage}>Start Here</button>
+            </div>
+        </OuterLayout>
+    );
+}
+
+export default Home;

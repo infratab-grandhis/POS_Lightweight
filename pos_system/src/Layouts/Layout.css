@@ -1,0 +1,29 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+    "navbar"
+    "mainContent";
+  height: 100vh;
+}
+
+nav {
+  grid-area: navbar;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 10px;
+  border: 1px solid;
+  background-color: #61dafb;
+  height: 50px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  grid-area: mainContent;
+  border: 1px solid;
+  overflow-y: auto;
+}
