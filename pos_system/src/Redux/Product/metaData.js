@@ -1,7 +1,7 @@
 const products = [
     {
         "id": "2001",
-        "name": "Veg Burger",
+        "label": "Burger",
         "price": 200,
         "image": "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_960_720.jpg",
         "customization": [
@@ -19,7 +19,7 @@ const products = [
     },
     {
         "id": "2002",
-        "name": "Pizza",
+        "label": "Pizza",
         "price": 250,
         "image": "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg",
         "customization": [
@@ -42,13 +42,13 @@ const products = [
     },
     {
         "id": "2003",
-        "name": "Lemonade",
+        "label": "Lemonade",
         "price": 200,
         "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187"
     },
     {
         "id": "2004",
-        "name": "Chicken Wrap",
+        "label": "Wrap",
         "price": 200,
         "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
         "customization": [

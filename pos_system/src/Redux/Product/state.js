@@ -2,9 +2,7 @@ import metaData from "./metaData";
 
 const initialState =   {
     productsList: metaData?.products,
-    inventoryData: metaData?.inventory,
-    orderHistoty: [],
-    cartData: []
+    inventoryData: metaData?.inventory
 };
 
 export default initialState;
