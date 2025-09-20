@@ -31,13 +31,13 @@ const Sidebar = ({ isOpen, onClose }) => {
                         className="sidebar-item"
                         onClick={() => handleNavigation(pages.home)}
                     >
-                        Home
+                        🏠 Home
                     </button>
                     <button
                         className="sidebar-item"
                         onClick={() => handleNavigation(pages.products)}
                     >
-                        Products
+                        🍔 Products
                     </button>
                     <button
                         className="sidebar-item"
@@ -47,6 +47,12 @@ const Sidebar = ({ isOpen, onClose }) => {
                             🛒 Cart
                             <CartBadge count={cartCount} size="small" className="sidebar-badge" />
                         </span>
+                    </button>
+                    <button
+                        className="sidebar-item"
+                        onClick={() => handleNavigation(pages.orderHistory)}
+                    >
+                        📋 Order History
                     </button>
                 </nav>
             </div>

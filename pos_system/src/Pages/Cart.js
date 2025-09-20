@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, updateCartQuantity, clearCart } from '../Redux/Order/action';
+import { useNavigate } from 'react-router-dom';
+import { removeFromCart, updateCartQuantity, clearCart, addToOrderHistory } from '../Redux/Order/action';
 import Button from '../Components/common/Button';
 import EmptyState from '../Components/common/EmptyState';
 import PriceDisplay from '../Components/common/PriceDisplay';
@@ -9,6 +10,7 @@ import './Cart.css';
 
 const Cart = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const cartItems = useSelector(state => state.orderReducer.cart);
     
     // Calculate total
@@ -28,6 +30,32 @@ const Cart = () => {
         if (window.confirm('Are you sure you want to clear the cart?')) {
             dispatch(clearCart());
         }
+    };
+
+    const handleProceedToCheckout = () => {
+        // Print order details to console (simulating printing)
+        console.log('=== ORDER RECEIPT ===');
+        console.log(`Order ID: ORD-${Date.now()}`);
+        console.log(`Date: ${new Date().toLocaleString()}`);
+        console.log('Items:');
+        cartItems.forEach(item => {
+            console.log(`- ${item.product.name || item.product.label} x${item.quantity} = ₹${item.totalPrice.toFixed(2)}`);
+            if (item.customizations.length > 0) {
+                console.log(`  Add-ons: ${item.customizations.map(c => c.label).join(', ')}`);
+            }
+        });
+        console.log(`Total: ₹${total.toFixed(2)}`);
+        console.log('Payment: Completed');
+        console.log('=====================');
+
+        // Show success message
+        alert(`Order completed successfully!\nTotal: ₹${total.toFixed(2)}\nCheck console for receipt details.`);
+        
+        // Add to order history
+        dispatch(addToOrderHistory(cartItems, total));
+        
+        // Navigate to order history
+        navigate('/order-history');
     };
 
     if (cartItems.length === 0) {
@@ -116,7 +144,7 @@ const Cart = () => {
                         </span>
                     </div>
                     
-                    <Button variant="primary" size="large">
+                    <Button variant="primary" size="large" onClick={handleProceedToCheckout}>
                         Proceed to Checkout
                     </Button>
                 </div>

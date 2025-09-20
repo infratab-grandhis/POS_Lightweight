@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Pages/Home';
 import Products from './Pages/Products';
 import Cart from './Pages/Cart';
+import OrderHistory from './Pages/OrderHistory';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/products" element={<Products/>} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/order-history" element={<OrderHistory/>} />
         </Routes>
       </BrowserRouter>
     </div>

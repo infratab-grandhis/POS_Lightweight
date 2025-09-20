@@ -5,7 +5,9 @@ import {
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
     ADD_CUSTOMIZATION,
-    REMOVE_CUSTOMIZATION
+    REMOVE_CUSTOMIZATION,
+    ADD_TO_ORDER_HISTORY,
+    CLEAR_ORDER_HISTORY
 } from "./action";
 
 const orderReducer = (state = initialState, { type, payload }) => {
@@ -68,6 +70,18 @@ const orderReducer = (state = initialState, { type, payload }) => {
                         }
                         : item
                 )
+            };
+
+        case ADD_TO_ORDER_HISTORY:
+            return {
+                ...state,
+                orderHistory: [payload, ...state.orderHistory] // Add new order at the beginning
+            };
+
+        case CLEAR_ORDER_HISTORY:
+            return {
+                ...state,
+                orderHistory: []
             };
 
         default:

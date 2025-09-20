@@ -1,7 +1,8 @@
 const pages = {
     products : '/products',
     home: '/',
-    cart: '/cart'
+    cart: '/cart',
+    orderHistory: '/order-history'
 };
 
 export default pages;
