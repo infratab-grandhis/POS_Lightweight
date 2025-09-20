@@ -19,6 +19,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             {/* Sidebar */}
             <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
                 <div className="sidebar-header">
+                    <h3 className='m-0'>Food-Truck-Pos</h3>
                     <button className="sidebar-close" onClick={onClose}>×</button>
                 </div>
                 <nav className="sidebar-nav">
