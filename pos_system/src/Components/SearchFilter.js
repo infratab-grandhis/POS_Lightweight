@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useDebounce } from '../utils';
 import './SearchFilter.css';
 
 const SearchFilter = ({ 
     products, 
+    inventory = [],
     onFilteredProducts, 
     initialSearchTerm = '', 
     className = '' 
@@ -14,6 +16,9 @@ const SearchFilter = ({
     const [sortBy, setSortBy] = useState('name');
     const [sortOrder, setSortOrder] = useState('asc');
     const [isExpanded, setIsExpanded] = useState(false);
+
+    // Use custom debounce hook for better performance
+    const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
     // Extract unique categories from products
     const categories = ['all', ...new Set(products.map(product => product.category))];
@@ -43,9 +48,9 @@ const SearchFilter = ({
     useEffect(() => {
         let filtered = [...products];
 
-        // Search by name/category
-        if (searchTerm) {
-            const term = searchTerm.toLowerCase();
+        // Search by name/category (using debounced search term)
+        if (debouncedSearchTerm) {
+            const term = debouncedSearchTerm.toLowerCase();
             filtered = filtered.filter(product =>
                 product.name.toLowerCase().includes(term) ||
                 product.label.toLowerCase().includes(term) ||
@@ -94,9 +99,11 @@ const SearchFilter = ({
                     bValue = b.category.toLowerCase();
                     break;
                 case 'stock':
-                    // Would need inventory data for proper stock sorting
-                    aValue = a.id;
-                    bValue = b.id;
+                    // Sort by available stock from inventory
+                    const aStock = inventory.find(inv => inv.productId === a.id)?.available || 0;
+                    const bStock = inventory.find(inv => inv.productId === b.id)?.available || 0;
+                    aValue = aStock;
+                    bValue = bStock;
                     break;
                 default:
                     aValue = a.name.toLowerCase();
@@ -111,7 +118,7 @@ const SearchFilter = ({
         });
 
         onFilteredProducts(filtered);
-    }, [products, searchTerm, selectedCategory, priceRange, stockFilter, sortBy, sortOrder, onFilteredProducts]);
+    }, [products, inventory, debouncedSearchTerm, selectedCategory, priceRange, stockFilter, sortBy, sortOrder, onFilteredProducts]);
 
     const handleClearFilters = () => {
         setSearchTerm('');
@@ -121,6 +128,13 @@ const SearchFilter = ({
         setSortBy('name');
         setSortOrder('asc');
     };
+
+    // Auto-reset sortBy to 'name' if 'category' is selected but becomes invalid
+    useEffect(() => {
+        if (sortBy === 'category' && selectedCategory !== 'all') {
+            setSortBy('name');
+        }
+    }, [selectedCategory, sortBy]);
 
     const hasActiveFilters = searchTerm || selectedCategory !== 'all' || 
                            priceRange !== 'all' || stockFilter !== 'all' || 
@@ -207,11 +221,16 @@ const SearchFilter = ({
                                     onChange={(e) => setSortBy(e.target.value)}
                                     className="filter-select"
                                 >
-                                    {sortOptions.map(option => (
-                                        <option key={option.value} value={option.value}>
-                                            {option.label}
-                                        </option>
-                                    ))}
+                                    {sortOptions
+                                        .filter(option => 
+                                            !(option.value === 'category' && selectedCategory !== 'all')
+                                        )
+                                        .map(option => (
+                                            <option key={option.value} value={option.value}>
+                                                {option.label}
+                                            </option>
+                                        ))
+                                    }
                                 </select>
                                 <button
                                     onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}

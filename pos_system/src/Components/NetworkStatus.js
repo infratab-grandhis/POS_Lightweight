@@ -38,7 +38,7 @@ const NetworkStatus = ({ compact = false }) => {
                     window.location.reload();
                 }, 2000);
             } catch (error) {
-                console.error('Failed to clear data:', error);
+                // Error clearing data
                 dispatch(showErrorNotification(
                     `Failed to clear data: ${error.message}`,
                     { title: 'Clear Failed' }

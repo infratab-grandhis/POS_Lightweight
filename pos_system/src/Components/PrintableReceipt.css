@@ -235,66 +235,33 @@
     color: #999;
 }
 
-/* Print Media Styles */
+/* Print Media Styles - Clean approach for react-to-print */
 @media print {
-    /* Hide everything except the receipt */
-    body * {
-        visibility: hidden;
-    }
-    
-    .printable-receipt,
-    .printable-receipt * {
-        visibility: visible;
-    }
-    
     .printable-receipt {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        max-width: none !important;
+        width: 80mm !important;
+        max-width: 80mm !important;
         margin: 0 !important;
-        padding: 10mm !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
+        padding: 5mm !important;
+        font-size: 9pt !important;
+        line-height: 1.2 !important;
+        color: black !important;
         background: white !important;
-        font-size: 10pt !important;
-        line-height: 1.3 !important;
-    }
-    
-    /* Optimize for thermal printers (58mm or 80mm) */
-    @page {
-        size: 80mm auto;
-        margin: 2mm;
     }
     
     .restaurant-name {
-        font-size: 14pt !important;
-    }
-    
-    .thank-you {
         font-size: 12pt !important;
+        font-weight: bold !important;
     }
     
     .grand-total-row {
-        font-size: 12pt !important;
+        font-size: 11pt !important;
+        font-weight: bold !important;
+        border-color: #000 !important;
     }
     
-    /* Ensure dark colors print well */
     .divider,
     .items-divider {
         border-color: #000 !important;
-    }
-    
-    .grand-total-row {
-        border-color: #000 !important;
-    }
-    
-    /* Force black text for all elements */
-    * {
-        color: black !important;
-        background: white !important;
     }
     
     .payment-success {
@@ -302,7 +269,6 @@
         font-weight: bold !important;
     }
     
-    /* Hide elements that shouldn't print */
     .no-print {
         display: none !important;
     }

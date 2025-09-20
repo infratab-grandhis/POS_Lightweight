@@ -6,6 +6,7 @@ import SearchFilter from '../Components/SearchFilter.js';
 
 const Products = () => {
     const productsList = useSelector(state => state.productReducer.productsList);
+    const inventory = useSelector(state => state.orderReducer.inventory);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [visibleProducts, setVisibleProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -23,14 +24,17 @@ const Products = () => {
         setHasMore(filtered.length > PRODUCTS_PER_PAGE);
     }, []);
 
-    // Initialize with all products when productsList changes
+    // Initialize with all products when productsList first loads
+    const [isInitialized, setIsInitialized] = useState(false);
+    
     useEffect(() => {
-        if (productsList.length > 0 && filteredProducts.length === 0) {
+        if (productsList.length > 0 && !isInitialized) {
             setFilteredProducts(productsList);
             setVisibleProducts(productsList.slice(0, PRODUCTS_PER_PAGE));
             setHasMore(productsList.length > PRODUCTS_PER_PAGE);
+            setIsInitialized(true);
         }
-    }, [productsList, filteredProducts.length]);
+    }, [productsList, isInitialized]);
 
     // Load more products
     const loadMoreProducts = useCallback(() => {
@@ -86,6 +90,7 @@ const Products = () => {
                 {/* Search and Filter Component */}
                 <SearchFilter
                     products={productsList}
+                    inventory={inventory}
                     onFilteredProducts={handleFilteredProducts}
                 />
 
@@ -104,7 +109,10 @@ const Products = () => {
                     <div className="no-results">
                         <div className="no-results-content">
                             <h3>🔍 No dishes found</h3>
-                            <p>Try adjusting your search or filters to find what you're looking for.</p>
+                            <p>No items match your current filters. Try different price range or category.</p>
+                            <p className="filter-suggestion">
+                                Current filters: {productsList.length} total items filtered by your selections
+                            </p>
                         </div>
                     </div>
                 ) : (

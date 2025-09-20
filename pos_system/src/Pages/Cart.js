@@ -1,13 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useReactToPrint } from 'react-to-print';
 import { removeFromCart, updateCartQuantity, clearCart, processCheckout } from '../Redux/Order/action';
-import { showWarningNotification, showErrorNotification, showOrderSuccessNotification } from '../Redux/Notification/actions';
+import { showWarningNotification, showOrderSuccessNotification } from '../Redux/Notification/actions';
 import Button from '../Components/common/Button';
 import EmptyState from '../Components/common/EmptyState';
 import PriceDisplay from '../Components/common/PriceDisplay';
-import PrintableReceipt from '../Components/PrintableReceipt';
 import OuterLayout from '../Layouts/OuterLayout';
 import './Cart.css';
 
@@ -16,45 +14,9 @@ const Cart = () => {
     const navigate = useNavigate();
     const cartItems = useSelector(state => state.orderReducer.cart);
     const inventory = useSelector(state => state.orderReducer.inventory);
-    const printRef = useRef(null);
-    const [currentOrderData, setCurrentOrderData] = useState(null);
-    
     // Calculate total
     const total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
 
-    // Print functionality
-    const handlePrint = useReactToPrint({
-        content: () => printRef.current,
-        documentTitle: `Receipt-${Date.now()}`,
-        onBeforePrint: () => {
-            // Prepare receipt for printing
-            return Promise.resolve();
-        },
-        onAfterPrint: () => {
-            // Receipt printing completed
-        },
-        onPrintError: (errorLocation, error) => {
-            console.error('Print error:', error);
-            dispatch(showErrorNotification(
-                'Unable to print receipt. Please check your printer connection.',
-                { title: 'Print Failed' }
-            ));
-        },
-        removeAfterPrint: false,
-        pageStyle: `
-            @page {
-                size: 80mm auto;
-                margin: 5mm;
-            }
-            @media print {
-                body { margin: 0; }
-                .printable-receipt { 
-                    font-size: 12px; 
-                    line-height: 1.4;
-                }
-            }
-        `
-    });
 
     const handleRemoveItem = (itemId) => {
         dispatch(removeFromCart(itemId));
@@ -89,6 +51,7 @@ const Cart = () => {
         }
     };
 
+
     const handleProceedToCheckout = () => {
         // Generate order data for receipt
         const orderData = {
@@ -104,39 +67,16 @@ const Cart = () => {
             }
         };
 
-        // Set order data for printing
-        setCurrentOrderData(orderData);
-
         // Show success notification
         dispatch(showOrderSuccessNotification(orderData.orderId, total));
-        
-        // Ask for print confirmation
-        const userWantsToPrint = window.confirm(
-            `Would you like to print the receipt for order ${orderData.orderId}?`
-        );
         
         // Process checkout (adds to order history AND clears cart)
         dispatch(processCheckout(cartItems, total));
         
-        // Print receipt if user wants to
-        if (userWantsToPrint && orderData) {
-            // Add a small delay to ensure state updates and DOM render are complete
-            setTimeout(() => {
-                if (handlePrint && typeof handlePrint === 'function') {
-                    handlePrint();
-                } else {
-                    dispatch(showErrorNotification(
-                        'Print function is not available. Please try again.',
-                        { title: 'Print Unavailable' }
-                    ));
-                }
-            }, 300);
-        }
-        
-        // Navigate to order history after a delay
+        // Navigate to order history with success message
         setTimeout(() => {
             navigate('/order-history');
-        }, userWantsToPrint ? 300 : 100);
+        }, 100);
     };
 
     if (cartItems.length === 0) {
@@ -227,18 +167,13 @@ const Cart = () => {
                         </span>
                     </div>
                     
+                    
                     <Button variant="primary" size="large" onClick={handleProceedToCheckout}>
                         Proceed to Checkout
                     </Button>
                 </div>
             </div>
 
-            {/* Hidden Receipt Component for Printing */}
-            {currentOrderData && (
-                <div style={{ display: 'none' }}>
-                    <PrintableReceipt ref={printRef} orderData={currentOrderData} />
-                </div>
-            )}
         </OuterLayout>
     );
 };

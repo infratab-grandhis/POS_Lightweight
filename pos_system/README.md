@@ -236,6 +236,51 @@ npx serve -s build
 - [ ] Validate accessibility
 - [ ] Test offline functionality
 
+## 🔌 Offline Testing Guide
+
+### Quick Offline Test (5 minutes)
+```bash
+1. Open app online → Verify functionality
+2. DevTools → Network Tab → Check "Offline"
+3. Refresh page (Ctrl+R) → Should still load
+4. Add items to cart → Should work
+5. Complete checkout → Should process
+6. Go back online → Verify data intact
+```
+
+### Comprehensive Offline Testing
+1. **Service Worker Setup**
+   - Load app online first (caches files automatically)
+   - Check Console for "Service Worker registered" message
+   - Verify in DevTools → Application → Service Workers
+
+2. **Core Offline Functions**
+   - ✅ Browse products (from cached data)
+   - ✅ Search and filter (local processing)
+   - ✅ Add/remove cart items
+   - ✅ Checkout and order completion
+   - ✅ View order history
+   - ✅ Print receipts
+
+3. **Data Persistence**
+   - Cart items survive browser refresh
+   - Order history persists across sessions
+   - Network status indicator updates correctly
+
+4. **Troubleshooting**
+   - If "No Internet" appears: Service worker needs to cache files online first
+   - Clear browser cache: DevTools → Application → Clear Storage
+   - Force refresh: Ctrl+Shift+R to bypass cache
+
+### Mobile PWA Testing
+```bash
+1. Open app in mobile browser
+2. "Add to Home Screen" option appears
+3. Install as PWA
+4. Turn on Airplane Mode
+5. Open PWA → Should work offline
+```
+
 ## 🤝 Contributing
 
 1. Fork the repository

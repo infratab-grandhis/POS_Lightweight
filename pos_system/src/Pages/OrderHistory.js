@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
 import OuterLayout from '../Layouts/OuterLayout';
 import Button from '../Components/common/Button';
 import EmptyState from '../Components/common/EmptyState';
 import PriceDisplay from '../Components/common/PriceDisplay';
+import PrintableReceipt from '../Components/PrintableReceipt';
 import { clearOrderHistory } from '../Redux/Order/action';
+import { showSuccessNotification, showErrorNotification } from '../Redux/Notification/actions';
 import './OrderHistory.css';
 
 const OrderHistory = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const orderHistory = useSelector(state => state.orderReducer.orderHistory);
+    
+    // Print functionality
+    const printRef = useRef();
+    const [printOrderData, setPrintOrderData] = useState(null);
 
     const handleClearHistory = () => {
         if (window.confirm('Are you sure you want to clear all order history?')) {
@@ -21,6 +28,54 @@ const OrderHistory = () => {
 
     const handleBackToProducts = () => {
         navigate('/products');
+    };
+
+    // Print functionality
+    const handlePrint = useReactToPrint({
+        contentRef: printRef,
+        documentTitle: `Receipt-${printOrderData?.orderId || Date.now()}`,
+        onBeforePrint: () => Promise.resolve(),
+        onAfterPrint: () => {
+            dispatch(showSuccessNotification('Receipt printed successfully!'));
+            setPrintOrderData(null);
+        },
+        onPrintError: (errorLocation, error) => {
+            dispatch(showErrorNotification('Unable to print receipt. Please try again.', { title: 'Print Failed' }));
+            setPrintOrderData(null);
+        },
+        pageStyle: `
+            @page {
+                size: 80mm auto;
+                margin: 2mm;
+            }
+        `
+    });
+
+    const handlePrintOrder = (order) => {
+        // Convert order format to receipt format
+        const receiptData = {
+            orderId: order.id,
+            items: order.items,
+            totalAmount: order.total,
+            paymentMethod: 'Card',
+            orderDate: order.date,
+            orderTime: order.time,
+            customerInfo: {
+                type: 'Walk-in',
+                orderType: 'Dine-in'
+            }
+        };
+        
+        setPrintOrderData(receiptData);
+        
+        // Wait for component to render with data, then print
+        setTimeout(() => {
+            if (printRef.current) {
+                handlePrint();
+            } else {
+                dispatch(showErrorNotification('Unable to prepare receipt for printing.'));
+            }
+        }, 100);
     };
 
     const formatDate = (dateString) => {
@@ -108,10 +163,37 @@ const OrderHistory = () => {
                                         </div>
                                     ))}
                                 </div>
+                                
+                                <div className="order-actions" style={{marginTop: '12px', display: 'flex', gap: '8px'}}>
+                                    <Button 
+                                        variant="primary" 
+                                        size="small"
+                                        onClick={() => handlePrintOrder(order)}
+                                    >
+                                        🖨️ Print Receipt
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
+            </div>
+
+            {/* Hidden Receipt Component for Printing */}
+            <div style={{ 
+                position: 'absolute', 
+                left: '-9999px', 
+                top: '-9999px',
+                width: '300px',
+                opacity: 0,
+                pointerEvents: 'none'
+            }}>
+                {printOrderData && (
+                    <PrintableReceipt 
+                        ref={printRef} 
+                        orderData={printOrderData}
+                    />
+                )}
             </div>
         </OuterLayout>
     );

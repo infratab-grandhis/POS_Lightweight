@@ -16,7 +16,6 @@ function App() {
 
   // Reset inventory to fresh data on app start
   useEffect(() => {
-    console.log('🔄 Resetting inventory to fresh data...');
     dispatch(resetInventory(metaData.inventory));
   }, [dispatch]);
 

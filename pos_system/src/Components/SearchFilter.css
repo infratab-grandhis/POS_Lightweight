@@ -161,6 +161,12 @@
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
+/* Disabled option styling */
+.filter-select option:disabled {
+    color: #9ca3af;
+    font-style: italic;
+}
+
 .sort-controls {
     display: flex;
     gap: 8px;
