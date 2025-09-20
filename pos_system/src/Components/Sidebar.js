@@ -1,10 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Sidebar.css';
 import pages from '../Pages/Constants.js';
 
 const Sidebar = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
+    const cartItems = useSelector(state => state.orderReducer.cart);
+    const cartCount = cartItems.length;
 
     const handleNavigation = (path) => {
         navigate(path);
@@ -39,7 +42,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                         className="sidebar-item"
                         onClick={() => handleNavigation('/cart')}
                     >
-                        Cart
+                        🛒 Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
                     </button>
                 </nav>
             </div>

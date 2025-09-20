@@ -7,6 +7,7 @@ export const transformProductInfo = (items) => {
             price: item?.price,
             quantity: item?.quantity || 0,
             total: (item?.quantity) ? (item?.quantity * item?.price) : 0,
+            isMainIngredient: item?.isMainIngredient
         });
         if (!!item?.customization && !!item?.customization.length) {
             const list = transformProductInfo(item?.customization);
