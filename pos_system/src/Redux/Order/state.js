@@ -3,7 +3,7 @@ import metaData from "../Product/metaData";
 const initialState = {
     orderHistory: [],
     cart: [],
-    inventory: [...metaData.inventory] // Copy inventory from product metadata
+    inventory: [...metaData.inventory] // Always use fresh inventory from metaData
 };
 
 export default initialState;

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { removeFromCart, updateCartQuantity, clearCart, addToOrderHistory } from '../Redux/Order/action';
+import { useReactToPrint } from 'react-to-print';
+import { removeFromCart, updateCartQuantity, clearCart, processCheckout } from '../Redux/Order/action';
+import { showWarningNotification, showErrorNotification, showOrderSuccessNotification } from '../Redux/Notification/actions';
 import Button from '../Components/common/Button';
 import EmptyState from '../Components/common/EmptyState';
 import PriceDisplay from '../Components/common/PriceDisplay';
+import PrintableReceipt from '../Components/PrintableReceipt';
 import OuterLayout from '../Layouts/OuterLayout';
 import './Cart.css';
 
@@ -13,9 +16,45 @@ const Cart = () => {
     const navigate = useNavigate();
     const cartItems = useSelector(state => state.orderReducer.cart);
     const inventory = useSelector(state => state.orderReducer.inventory);
+    const printRef = useRef(null);
+    const [currentOrderData, setCurrentOrderData] = useState(null);
     
     // Calculate total
     const total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+
+    // Print functionality
+    const handlePrint = useReactToPrint({
+        content: () => printRef.current,
+        documentTitle: `Receipt-${Date.now()}`,
+        onBeforePrint: () => {
+            // Prepare receipt for printing
+            return Promise.resolve();
+        },
+        onAfterPrint: () => {
+            // Receipt printing completed
+        },
+        onPrintError: (errorLocation, error) => {
+            console.error('Print error:', error);
+            dispatch(showErrorNotification(
+                'Unable to print receipt. Please check your printer connection.',
+                { title: 'Print Failed' }
+            ));
+        },
+        removeAfterPrint: false,
+        pageStyle: `
+            @page {
+                size: 80mm auto;
+                margin: 5mm;
+            }
+            @media print {
+                body { margin: 0; }
+                .printable-receipt { 
+                    font-size: 12px; 
+                    line-height: 1.4;
+                }
+            }
+        `
+    });
 
     const handleRemoveItem = (itemId) => {
         dispatch(removeFromCart(itemId));
@@ -34,7 +73,10 @@ const Cart = () => {
         const availableStock = productInventory.available + cartItem.quantity;
         
         if (newQuantity > availableStock) {
-            alert(`❌ Cannot add more! Only ${availableStock} ${productInventory.unit} available in stock.`);
+            dispatch(showWarningNotification(
+                `Only ${availableStock} ${productInventory.unit} available in stock.`,
+                { title: 'Stock Limit Reached' }
+            ));
             return;
         }
         
@@ -48,29 +90,53 @@ const Cart = () => {
     };
 
     const handleProceedToCheckout = () => {
-        // Print order details to console (simulating printing)
-        console.log('=== ORDER RECEIPT ===');
-        console.log(`Order ID: ORD-${Date.now()}`);
-        console.log(`Date: ${new Date().toLocaleString()}`);
-        console.log('Items:');
-        cartItems.forEach(item => {
-            console.log(`- ${item.product.name || item.product.label} x${item.quantity} = ₹${item.totalPrice.toFixed(2)}`);
-            if (item.customizations.length > 0) {
-                console.log(`  Add-ons: ${item.customizations.map(c => c.label).join(', ')}`);
+        // Generate order data for receipt
+        const orderData = {
+            orderId: `ORD-${Date.now()}`,
+            items: cartItems,
+            totalAmount: total,
+            paymentMethod: 'Card',
+            orderDate: new Date().toLocaleDateString(),
+            orderTime: new Date().toLocaleTimeString(),
+            customerInfo: {
+                type: 'Walk-in',
+                orderType: 'Dine-in'
             }
-        });
-        console.log(`Total: ₹${total.toFixed(2)}`);
-        console.log('Payment: Completed');
-        console.log('=====================');
+        };
 
-        // Show success message
-        alert(`Order completed successfully!\nTotal: ₹${total.toFixed(2)}\nCheck console for receipt details.`);
+        // Set order data for printing
+        setCurrentOrderData(orderData);
+
+        // Show success notification
+        dispatch(showOrderSuccessNotification(orderData.orderId, total));
         
-        // Add to order history
-        dispatch(addToOrderHistory(cartItems, total));
+        // Ask for print confirmation
+        const userWantsToPrint = window.confirm(
+            `Would you like to print the receipt for order ${orderData.orderId}?`
+        );
         
-        // Navigate to order history
-        navigate('/order-history');
+        // Process checkout (adds to order history AND clears cart)
+        dispatch(processCheckout(cartItems, total));
+        
+        // Print receipt if user wants to
+        if (userWantsToPrint && orderData) {
+            // Add a small delay to ensure state updates and DOM render are complete
+            setTimeout(() => {
+                if (handlePrint && typeof handlePrint === 'function') {
+                    handlePrint();
+                } else {
+                    dispatch(showErrorNotification(
+                        'Print function is not available. Please try again.',
+                        { title: 'Print Unavailable' }
+                    ));
+                }
+            }, 300);
+        }
+        
+        // Navigate to order history after a delay
+        setTimeout(() => {
+            navigate('/order-history');
+        }, userWantsToPrint ? 300 : 100);
     };
 
     if (cartItems.length === 0) {
@@ -94,9 +160,11 @@ const Cart = () => {
             <div className="cart-container">
                 <div className="cart-header">
                     <h2>Your Cart ({cartItems.length} items)</h2>
-                    <Button onClick={handleClearCart} variant="danger" size="small">
-                        Clear All
-                    </Button>
+                    <div className="cart-header-actions">
+                        <Button onClick={handleClearCart} variant="danger" size="small">
+                            Clear All
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="cart-items">
@@ -164,6 +232,13 @@ const Cart = () => {
                     </Button>
                 </div>
             </div>
+
+            {/* Hidden Receipt Component for Printing */}
+            {currentOrderData && (
+                <div style={{ display: 'none' }}>
+                    <PrintableReceipt ref={printRef} orderData={currentOrderData} />
+                </div>
+            )}
         </OuterLayout>
     );
 };

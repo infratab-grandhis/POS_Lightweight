@@ -13,6 +13,7 @@ export const CLEAR_ORDER_HISTORY = 'CLEAR_ORDER_HISTORY';
 // Inventory Actions
 export const UPDATE_INVENTORY = 'UPDATE_INVENTORY';
 export const RESTORE_INVENTORY = 'RESTORE_INVENTORY';
+export const RESET_INVENTORY = 'RESET_INVENTORY';
 
 // Action Creators
 export const addToCart = (product, quantity = 1, customizations = []) => ({
@@ -37,6 +38,11 @@ export const updateInventory = (productId, quantityUsed) => ({
 export const restoreInventory = (productId, quantityToRestore) => ({
     type: RESTORE_INVENTORY,
     payload: { productId, quantityToRestore }
+});
+
+export const resetInventory = (freshInventory) => ({
+    type: RESET_INVENTORY,
+    payload: freshInventory
 });
 
 // Enhanced addToCart with inventory validation

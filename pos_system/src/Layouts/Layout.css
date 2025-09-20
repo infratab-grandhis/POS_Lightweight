@@ -43,10 +43,13 @@
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Right section - Cart */
+/* Right section - Network Status + Cart */
 .navbar-right {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  min-width: 0; /* Allows flexbox to shrink if needed */
 }
 
 .hamburger-menu {
@@ -149,6 +152,10 @@ main {
   
   .navbar-title {
     font-size: 16px;
+  }
+  
+  .navbar-right {
+    gap: 8px; /* Reduce gap on mobile */
   }
   
   .cart-icon {

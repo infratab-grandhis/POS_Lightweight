@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Layout.css';
 import Sidebar from '../Components/Sidebar';
 import CartBadge from '../Components/common/CartBadge';
+import NetworkStatus from '../Components/NetworkStatus';
  
 const OuterLayout = (props) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -42,8 +43,12 @@ const OuterLayout = (props) => {
                     <h3 className="navbar-title">Food-Truck-Pos</h3>
                 </div>
 
-                {/* Right: Cart Symbol (only visible when cart has items) */}
+                {/* Right: Network Status + Cart Symbol */}
                 <div className="navbar-right">
+                    {/* Network Status - Always visible */}
+                    <NetworkStatus compact={true} />
+                    
+                    {/* Cart Symbol - Only visible when cart has items */}
                     {cartCount > 0 && (
                         <button className="cart-button" onClick={handleCartClick}>
                             <div className="cart-icon">

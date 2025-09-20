@@ -9,7 +9,8 @@ import {
     ADD_TO_ORDER_HISTORY,
     CLEAR_ORDER_HISTORY,
     UPDATE_INVENTORY,
-    RESTORE_INVENTORY
+    RESTORE_INVENTORY,
+    RESET_INVENTORY
 } from "./action";
 
 const orderReducer = (state = initialState, { type, payload }) => {
@@ -120,11 +121,17 @@ const orderReducer = (state = initialState, { type, payload }) => {
         case RESTORE_INVENTORY:
             return {
                 ...state,
-                inventory: state.inventory.map(item => 
+                inventory: state.inventory.map(item =>
                     item.productId === payload.productId 
                         ? { ...item, available: item.available + payload.quantityToRestore }
                         : item
                 )
+            };
+
+        case RESET_INVENTORY:
+            return {
+                ...state,
+                inventory: [...payload] // Replace entire inventory with fresh data
             };
 
         default:

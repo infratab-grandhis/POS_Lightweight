@@ -1,0 +1,379 @@
+/* PrintableReceipt Component Styles */
+
+/* Screen styles (for preview) */
+.printable-receipt {
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+    padding: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.receipt-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.restaurant-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.restaurant-tagline {
+    font-size: 11px;
+    margin: 0 0 8px 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* Dividers */
+.divider {
+    border-top: 1px dashed #333;
+    margin: 8px 0;
+    height: 1px;
+}
+
+.items-divider {
+    border-top: 1px solid #333;
+    margin: 4px 0;
+    height: 1px;
+}
+
+/* Order Info */
+.receipt-order-info {
+    margin-bottom: 12px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.info-label {
+    font-weight: bold;
+    flex: 1;
+}
+
+.info-value {
+    flex: 1;
+    text-align: right;
+}
+
+.payment-success {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Items Section */
+.receipt-items {
+    margin-bottom: 12px;
+}
+
+.items-header {
+    display: grid;
+    grid-template-columns: 2fr 0.6fr 0.8fr 0.8fr;
+    gap: 4px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+
+.item-name-header {
+    text-align: left;
+}
+
+.item-qty-header,
+.item-price-header,
+.item-total-header {
+    text-align: right;
+}
+
+.receipt-item {
+    margin-bottom: 8px;
+}
+
+.item-main-row {
+    display: grid;
+    grid-template-columns: 2fr 0.6fr 0.8fr 0.8fr;
+    gap: 4px;
+    margin-bottom: 2px;
+}
+
+.item-name {
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.item-qty,
+.item-price,
+.item-total {
+    text-align: right;
+}
+
+/* Customizations */
+.item-customizations {
+    margin-left: 8px;
+    border-left: 1px solid #ccc;
+    padding-left: 8px;
+}
+
+.customization-row {
+    display: grid;
+    grid-template-columns: 2fr 0.6fr 0.8fr 0.8fr;
+    gap: 4px;
+    font-size: 11px;
+    margin-bottom: 1px;
+    color: #666;
+}
+
+.customization-name {
+    font-style: italic;
+}
+
+.customization-qty,
+.customization-price,
+.customization-total {
+    text-align: right;
+}
+
+/* Totals Section */
+.receipt-totals {
+    margin-bottom: 12px;
+}
+
+.subtotal-row,
+.tax-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.grand-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 8px 0 4px 0;
+    padding: 4px 0;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.total-label,
+.grand-total-label {
+    flex: 1;
+}
+
+.total-value,
+.grand-total-value {
+    flex: 1;
+    text-align: right;
+}
+
+.grand-total-label,
+.grand-total-value {
+    font-weight: bold;
+}
+
+/* Payment Section */
+.receipt-payment {
+    margin-bottom: 16px;
+}
+
+/* Footer */
+.receipt-footer {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.thank-you {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+}
+
+.contact-info {
+    font-size: 10px;
+    margin: 4px 0;
+    color: #555;
+}
+
+.return-policy {
+    font-size: 9px;
+    margin: 8px 0;
+    color: #777;
+    font-style: italic;
+}
+
+.receipt-bottom {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px dashed #333;
+}
+
+.powered-by {
+    font-size: 9px;
+    margin: 2px 0;
+    color: #888;
+}
+
+.print-time {
+    font-size: 8px;
+    margin: 2px 0;
+    color: #999;
+}
+
+/* Print Media Styles */
+@media print {
+    /* Hide everything except the receipt */
+    body * {
+        visibility: hidden;
+    }
+    
+    .printable-receipt,
+    .printable-receipt * {
+        visibility: visible;
+    }
+    
+    .printable-receipt {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 10mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: white !important;
+        font-size: 10pt !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Optimize for thermal printers (58mm or 80mm) */
+    @page {
+        size: 80mm auto;
+        margin: 2mm;
+    }
+    
+    .restaurant-name {
+        font-size: 14pt !important;
+    }
+    
+    .thank-you {
+        font-size: 12pt !important;
+    }
+    
+    .grand-total-row {
+        font-size: 12pt !important;
+    }
+    
+    /* Ensure dark colors print well */
+    .divider,
+    .items-divider {
+        border-color: #000 !important;
+    }
+    
+    .grand-total-row {
+        border-color: #000 !important;
+    }
+    
+    /* Force black text for all elements */
+    * {
+        color: black !important;
+        background: white !important;
+    }
+    
+    .payment-success {
+        color: black !important;
+        font-weight: bold !important;
+    }
+    
+    /* Hide elements that shouldn't print */
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Responsive Design for Preview */
+@media (max-width: 768px) {
+    .printable-receipt {
+        max-width: 280px;
+        font-size: 11px;
+        padding: 16px;
+    }
+    
+    .restaurant-name {
+        font-size: 16px;
+    }
+    
+    .items-header,
+    .item-main-row {
+        grid-template-columns: 1.8fr 0.5fr 0.7fr 0.7fr;
+    }
+    
+    .customization-row {
+        font-size: 10px;
+        grid-template-columns: 1.8fr 0.5fr 0.7fr 0.7fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .printable-receipt {
+        max-width: 260px;
+        font-size: 10px;
+        padding: 12px;
+    }
+    
+    .restaurant-name {
+        font-size: 14px;
+    }
+    
+    .items-header,
+    .item-main-row {
+        grid-template-columns: 1.5fr 0.4fr 0.6fr 0.6fr;
+    }
+    
+    .customization-row {
+        font-size: 9px;
+        grid-template-columns: 1.5fr 0.4fr 0.6fr 0.6fr;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .printable-receipt {
+        border-color: #000;
+        color: #000;
+        background: #fff;
+    }
+    
+    .divider,
+    .items-divider {
+        border-color: #000;
+    }
+    
+    .customization-row {
+        color: #333;
+    }
+    
+    .contact-info,
+    .return-policy,
+    .powered-by,
+    .print-time {
+        color: #000;
+    }
+}

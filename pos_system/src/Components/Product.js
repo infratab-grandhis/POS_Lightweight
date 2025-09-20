@@ -3,7 +3,63 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductPrice from './ProductPrice';
 import { transformProductInfo } from '../utils';
 import { addToCartWithInventoryCheck } from '../Redux/Order/action';
+import { showAddToCartNotification } from '../Redux/Notification/actions';
 import Button from './common/Button';
+
+// Lazy loading image component for better performance
+const LazyImage = ({ src, alt, className, placeholder }) => {
+    const [imageSrc, setImageSrc] = useState(placeholder);
+    const [imageRef, setImageRef] = useState();
+
+    useEffect(() => {
+        let observer;
+        
+        if (imageRef && imageSrc === placeholder) {
+            observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = new Image();
+                            img.onload = () => {
+                                setImageSrc(src);
+                            };
+                            img.onerror = () => {
+                                setImageSrc('https://via.placeholder.com/400x300/f0f0f0/999999?text=Image+Error');
+                            };
+                            img.src = src;
+                            observer.unobserve(imageRef);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: '50px'
+                }
+            );
+            observer.observe(imageRef);
+        }
+        
+        return () => {
+            if (observer && imageRef) {
+                observer.unobserve(imageRef);
+            }
+        };
+    }, [imageRef, src, imageSrc, placeholder]);
+
+    return (
+        <img
+            ref={setImageRef}
+            src={imageSrc}
+            alt={alt}
+            className={className}
+            loading="lazy"
+            style={{
+                transition: 'opacity 0.3s ease',
+                opacity: imageSrc === placeholder ? 0.6 : 1
+            }}
+        />
+    );
+};
 
 const Product = ({ product }) => {
     const dispatch = useDispatch();
@@ -44,6 +100,13 @@ const Product = ({ product }) => {
             const mainProduct = items.find(item => item.isMainIngredient);
             if (mainProduct) {
                 await dispatch(addToCartWithInventoryCheck(product, quantity, selectedCustomizations));
+                
+                // Show success notification
+                dispatch(showAddToCartNotification(
+                    product.name || product.label,
+                    quantity
+                ));
+                
                 // Reset form
                 setSelectedCustomizations([]);
                 setQuantity(1);
@@ -68,7 +131,12 @@ const Product = ({ product }) => {
         <section className={`product-container ${isOutOfStock ? 'out-of-stock' : ''}`}>
             {/* Product Image with Inventory Badge */}
             <div className="product-image-wrapper" onClick={toggleProductInfoContent}>
-                <img className='product-image' src={product?.image} alt={product?.name} />
+                <LazyImage 
+                    src={product?.image} 
+                    alt={product?.name || product?.label} 
+                    className="product-image"
+                    placeholder="https://via.placeholder.com/400x300/f0f0f0/999999?text=Loading..."
+                />
                 
                 {/* Inventory Status Badge */}
                 <div className="inventory-badge">

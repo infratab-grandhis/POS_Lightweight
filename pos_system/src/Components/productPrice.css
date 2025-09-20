@@ -1,16 +1,22 @@
+/* Menu Layout */
 .menu {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 8px;
-    max-width: 600px;
-    margin: 10px auto;
-    font-family: sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    font-family: inherit;
     align-items: center;
 }
 
 .menu-header {
     font-weight: bold;
-    padding: 5px 0;
+    padding: 8px 0;
+    color: #374151;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .menu input {
@@ -55,15 +61,13 @@
     padding: 3px 8px;
     border-radius: 12px;
     font-size: 11px;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 1px 3px rgba(40, 167, 69, 0.3);
 }
 
-/* Note: Quantity controls styles moved to QuantityControls.css */
-
-/* Temporary quantity controls styling */
+/* Quantity Controls */
 .temp-quantity-controls {
     display: flex;
     align-items: center;
@@ -83,6 +87,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.2s ease;
 }
 
 .temp-quantity-controls button:hover:not(:disabled) {
@@ -110,6 +115,16 @@
 
 /* Mobile and Tablet Optimizations */
 @media (max-width: 768px) {
+    .menu {
+        padding: 12px;
+        gap: 6px;
+    }
+    
+    .menu-header {
+        padding: 6px 0;
+        font-size: 13px;
+    }
+    
     .menu-item-container {
         gap: 6px;
         padding: 6px 0;
@@ -132,6 +147,16 @@
 }
 
 @media (max-width: 480px) {
+    .menu {
+        padding: 10px;
+        gap: 4px;
+        grid-template-columns: 2fr 0.8fr 1fr; /* Adjust columns for smaller screens */
+    }
+    
+    .menu-header {
+        font-size: 12px;
+    }
+    
     .menu-item-container {
         gap: 8px;
     }
@@ -180,28 +205,126 @@
 }
 
 .grand-total-row {
-    display: contents;
+    display: contents !important;
     font-weight: bold;
     font-size: 1.1em;
-    color: #007bff;
-    border-top: 2px solid #007bff;
-    margin-top: 8px;
-    padding-top: 8px;
+    color: #1f2937;
 }
 
 .grand-total-label {
-    font-weight: bold;
-    color: #007bff;
-    padding-top: 8px;
-    border-top: 2px solid #e9ecef;
+    font-weight: 700;
+    color: #1f2937;
+    padding-top: 16px;
+    border-top: 2px solid #007bff;
+    margin-top: 8px;
+    font-size: 16px;
 }
 
 .grand-total-amount {
-    font-weight: bold;
+    font-weight: 700;
     color: #007bff;
-    font-size: 1.2em;
+    font-size: 1.25em;
     text-align: right;
+    padding: 16px 12px 0;
+    border-top: 2px solid #007bff;
+    margin-top: 8px;
+    background: #f0f8ff;
+    border-radius: 6px;
+}
+
+/* Clickable Product Basic Info Styles */
+.product-basic-info.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 16px;
+    margin: -16px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.product-basic-info.clickable:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-basic-info.clickable:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Expand Indicator Styles */
+.expand-indicator {
+    margin-top: 12px;
     padding-top: 8px;
-    border-top: 2px solid #e9ecef;
+    border-top: 1px solid #e5e7eb;
+}
+
+.expand-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3b82f6;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.product-basic-info.clickable:hover .expand-text {
+    color: #1d4ed8;
+}
+
+/* Visual feedback for clickable area */
+.product-basic-info.clickable::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.product-basic-info.clickable:focus::after,
+.product-basic-info.clickable:focus-visible::after {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Performance Optimizations */
+.product-container img {
+    will-change: transform;
+}
+
+.product-container {
+    contain: layout style;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    .product-container,
+    .product-basic-info.clickable {
+        transition: none;
+    }
+    
+    .badge {
+        transition: none;
+    }
+    
+    .product-basic-info.clickable:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .product-basic-info.clickable {
+        border: 1px solid #000;
+    }
+    
+    .product-basic-info.clickable:hover {
+        background: #fff;
+        border-color: #0066cc;
+    }
 }
 
