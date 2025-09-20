@@ -1,0 +1,37 @@
+/* CartBadge - Minimal CSS */
+.cart-badge {
+  position: absolute;
+  background: #dc3545;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Size variants */
+.cart-badge-small {
+  top: -6px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+}
+
+.cart-badge-medium {
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+
+.cart-badge-large {
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PriceDisplay from './common/PriceDisplay';
 import './productPrice.css';
 
 const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomizations, onCustomizationChange }) => {
@@ -27,28 +28,29 @@ const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomiza
             {
                 itemsList.map(item => (
                     <React.Fragment key={item?.id}>
-                        <span className="menu-item text-overflow">
-                            {`(₹${item?.price})${item?.label}`}
-                            {item?.isMainIngredient && <span className="main-ingredient-badge">Main</span>}
-                        </span>
+                        <div className="menu-item-container">
+                            <div className="item-name-row">
+                                <span className="item-price">
+                                    (<PriceDisplay amount={item?.price} size="small" />)
+                                </span>
+                                <span className="item-label">{item?.label}</span>
+                            </div>
+                            {item?.isMainIngredient && (
+                                <div className="badge-row">
+                                    <span className="main-ingredient-badge">Main Item</span>
+                                </div>
+                            )}
+                        </div>
                         {item?.isMainIngredient ? (
-                            <div className="quantity-controls">
+                            <div className="temp-quantity-controls">
                                 <button 
-                                    className="quantity-btn"
                                     onClick={() => onQuantityChange(Math.max(1, quantity - 1))}
                                     disabled={quantity <= 1}
-                                    type="button"
-                                > -
-                                </button>
-                                <span className="quantity-display">
-                                    {quantity}
-                                </span>
+                                >-</button>
+                                <span>{quantity}</span>
                                 <button 
-                                    className="quantity-btn"
                                     onClick={() => onQuantityChange(quantity + 1)}
-                                    type="button"
-                                > +
-                                </button>
+                                >+</button>
                             </div>
                         ) : (
                             <div className="customization-controls">
@@ -60,7 +62,9 @@ const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomiza
                                 />
                             </div>
                         )}
-                        <span className="item-total">₹{calculateItemTotal(item).toFixed(2)}</span>
+                        <span className="item-total">
+                            <PriceDisplay amount={calculateItemTotal(item)} size="medium" />
+                        </span>
                     </React.Fragment>
                 ))
             }
@@ -68,7 +72,9 @@ const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomiza
             <div className="grand-total-row">
                 <span className="grand-total-label">Grand Total:</span>
                 <span></span>
-                <span className="grand-total-amount">₹{grandTotal.toFixed(2)}</span>
+                <span className="grand-total-amount">
+                    <PriceDisplay amount={grandTotal} size="large" />
+                </span>
             </div>
         </div>
     );

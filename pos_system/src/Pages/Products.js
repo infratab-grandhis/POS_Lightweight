@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector, useStore } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import OuterLayout from '../Layouts/OuterLayout.js';
 import Product from '../Components/Product.js';

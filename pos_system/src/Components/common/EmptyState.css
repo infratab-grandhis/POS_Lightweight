@@ -1,0 +1,23 @@
+/* EmptyState - Minimal CSS */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.empty-state-title {
+  margin: 0 0 16px 0;
+  color: #495057;
+  font-size: 28px;
+}
+
+.empty-state-message {
+  margin: 0 0 30px 0;
+  font-size: 16px;
+}

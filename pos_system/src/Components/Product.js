@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import ProductPrice from './ProductPrice';
 import { transformProductInfo } from '../utils';
 import { addToCart } from '../Redux/Order/action';
+import Button from './common/Button';
 
 const Product = ({ product }) => {
     const dispatch = useDispatch();
@@ -53,9 +54,9 @@ const Product = ({ product }) => {
                             selectedCustomizations={selectedCustomizations}
                             onCustomizationChange={handleCustomizationChange}
                         />
-                        <button className='button-primary' onClick={handleAddToCart}>
+                        <Button variant="primary" onClick={handleAddToCart}>
                             ADD TO CART
-                        </button>
+                        </Button>
                     </section>
                 )
             }

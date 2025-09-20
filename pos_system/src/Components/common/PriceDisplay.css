@@ -1,0 +1,17 @@
+/* PriceDisplay - Minimal CSS */
+.price-display {
+  font-weight: 600;
+  color: #28a745;
+}
+
+.price-small { 
+  font-size: 14px; 
+}
+
+.price-medium { 
+  font-size: 16px; 
+}
+
+.price-large { 
+  font-size: 18px; 
+}

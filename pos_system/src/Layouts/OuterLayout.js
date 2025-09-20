@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './Layout.css';
 import Sidebar from '../Components/Sidebar';
+import CartBadge from '../Components/common/CartBadge';
  
 const OuterLayout = (props) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -47,7 +48,7 @@ const OuterLayout = (props) => {
                         <button className="cart-button" onClick={handleCartClick}>
                             <div className="cart-icon">
                                 🛒
-                                <span className="cart-badge">{cartCount}</span>
+                                <CartBadge count={cartCount} size="medium" />
                             </div>
                         </button>
                     )}

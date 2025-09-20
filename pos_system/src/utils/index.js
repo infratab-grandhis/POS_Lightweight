@@ -1,6 +1,6 @@
 export const transformProductInfo = (items, isMainProduct = true) => {
     let result = []
-    const list = items.map((item, index) => {
+    items.forEach((item, index) => {
         result.push({
             id: item?.id,
             label: item?.label?.toUpperCase(),

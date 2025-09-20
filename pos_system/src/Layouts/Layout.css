@@ -109,30 +109,7 @@
   color: white;
 }
 
-/* Cart Badge (item count) */
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #dc3545;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white;
-  animation: cartBounce 0.3s ease;
-}
-
-@keyframes cartBounce {
-  0% { transform: scale(0.8); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
+/* Note: Cart badge styles moved to CartBadge.css */
 
 main {
   grid-area: mainContent;
@@ -156,13 +133,6 @@ main {
     font-size: 22px;
   }
   
-  .cart-badge {
-    width: 18px;
-    height: 18px;
-    font-size: 11px;
-    top: -6px;
-    right: -6px;
-  }
   
   .hamburger-menu span {
     width: 22px;
@@ -201,9 +171,5 @@ main {
   .navbar {
     background: #000;
     border-bottom: 3px solid #fff;
-  }
-  
-  .cart-badge {
-    border: 3px solid #fff;
   }
 }

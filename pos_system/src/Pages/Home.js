@@ -13,14 +13,6 @@ const containerStyles = {
     'margin': "50% auto"
 }
 
-const buttonStyles = {
-    'backgroundColor': '#217EF9',
-    'padding': '10px',
-    'color': '#ffff',
-    'borderRadius': '10px',
-    'border': 'none',
-    'cursor':'pointer'
-}
 
 const Home = () => {
     const navigate = useNavigate();

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateCartQuantity, clearCart } from '../Redux/Order/action';
+import Button from '../Components/common/Button';
+import EmptyState from '../Components/common/EmptyState';
+import PriceDisplay from '../Components/common/PriceDisplay';
 import OuterLayout from '../Layouts/OuterLayout';
 import './Cart.css';
 
@@ -31,17 +34,13 @@ const Cart = () => {
         return (
             <OuterLayout>
                 <div className="cart-container">
-                    <div className="empty-cart">
-                        <div className="empty-cart-icon">🛒</div>
-                        <h2>Your cart is empty</h2>
-                        <p>Add some delicious items to get started!</p>
-                        <button 
-                            className="continue-shopping-btn"
-                            onClick={() => window.history.back()}
-                        >
-                            Continue Shopping
-                        </button>
-                    </div>
+                    <EmptyState
+                        icon="🛒"
+                        title="Your cart is empty"
+                        message="Add some delicious items to get started!"
+                        actionText="Continue Shopping"
+                        onAction={() => window.history.back()}
+                    />
                 </div>
             </OuterLayout>
         );
@@ -52,9 +51,9 @@ const Cart = () => {
             <div className="cart-container">
                 <div className="cart-header">
                     <h2>Your Cart ({cartItems.length} items)</h2>
-                    <button onClick={handleClearCart} className="clear-cart-btn">
+                    <Button onClick={handleClearCart} variant="danger" size="small">
                         Clear All
-                    </button>
+                    </Button>
                 </div>
 
                 <div className="cart-items">
@@ -69,7 +68,9 @@ const Cart = () => {
                             
                             <div className="item-details">
                                 <h3>{item.product.name || item.product.label}</h3>
-                                <p className="base-price">₹{item.product.price}</p>
+                                <p className="base-price">
+                                    <PriceDisplay amount={item.product.price} size="small" />
+                                </p>
                                 
                                 {item.customizations.length > 0 && (
                                     <div className="customizations">
@@ -80,33 +81,28 @@ const Cart = () => {
                             </div>
 
                             <div className="item-controls">
-                                <div className="quantity-controls">
+                                <div className="temp-quantity-controls">
                                     <button 
-                                        onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                                        onClick={() => handleQuantityChange(item.id, Math.max(1, item.quantity - 1))}
                                         disabled={item.quantity <= 1}
-                                        className="quantity-btn"
-                                    >
-                                        -
-                                    </button>
-                                    <span className="quantity">{item.quantity}</span>
+                                    >-</button>
+                                    <span>{item.quantity}</span>
                                     <button 
                                         onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
-                                        className="quantity-btn"
-                                    >
-                                        +
-                                    </button>
+                                    >+</button>
                                 </div>
                                 
                                 <div className="item-total">
-                                    ₹{item.totalPrice.toFixed(2)}
+                                    <PriceDisplay amount={item.totalPrice} size="large" />
                                 </div>
                                 
-                                <button 
+                                <Button 
                                     onClick={() => handleRemoveItem(item.id)}
-                                    className="remove-btn"
+                                    variant="danger"
+                                    size="small"
                                 >
                                     🗑️
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     ))}
@@ -115,12 +111,14 @@ const Cart = () => {
                 <div className="cart-summary">
                     <div className="total-line">
                         <span className="total-label">Total:</span>
-                        <span className="total-amount">₹{total.toFixed(2)}</span>
+                        <span className="total-amount">
+                            <PriceDisplay amount={total} size="large" />
+                        </span>
                     </div>
                     
-                    <button className="checkout-btn">
+                    <Button variant="primary" size="large">
                         Proceed to Checkout
-                    </button>
+                    </Button>
                 </div>
             </div>
         </OuterLayout>

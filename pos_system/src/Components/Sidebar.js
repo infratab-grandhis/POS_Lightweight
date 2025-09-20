@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './Sidebar.css';
 import pages from '../Pages/Constants.js';
+import CartBadge from './common/CartBadge';
 
 const Sidebar = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
@@ -42,7 +43,10 @@ const Sidebar = ({ isOpen, onClose }) => {
                         className="sidebar-item"
                         onClick={() => handleNavigation(pages.cart)}
                     >
-                        🛒 Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+                        <span className="cart-item-wrapper">
+                            🛒 Cart
+                            <CartBadge count={cartCount} size="small" className="sidebar-badge" />
+                        </span>
                     </button>
                 </nav>
             </div>
