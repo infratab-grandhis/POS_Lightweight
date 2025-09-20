@@ -9,7 +9,7 @@ const Product = ({ product }) => {
     const [expand, setExpansStatus] = useState(false);
     const [items, setItems] = useState([]);
     const [selectedCustomizations, setSelectedCustomizations] = useState([]);
-    const [quantity, setQuantity] = useState('');
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         const itemsList = transformProductInfo([product]);

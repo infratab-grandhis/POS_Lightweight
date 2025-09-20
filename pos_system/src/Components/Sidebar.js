@@ -40,7 +40,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                     </button>
                     <button
                         className="sidebar-item"
-                        onClick={() => handleNavigation('/cart')}
+                        onClick={() => handleNavigation(pages.cart)}
                     >
                         🛒 Cart {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
                     </button>

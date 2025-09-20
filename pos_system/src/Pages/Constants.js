@@ -1,6 +1,7 @@
 const pages = {
     products : '/products',
-    home: '/'
+    home: '/',
+    cart: '/cart'
 };
 
 export default pages;

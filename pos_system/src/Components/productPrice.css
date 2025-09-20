@@ -14,8 +14,7 @@
 }
 
 .menu-item,
-.menu input,
-.menu div {
+.menu input{
     padding: 6px 0;
 }
 
@@ -33,24 +32,73 @@
     font-weight: bold;
 }
 
-.quantity-input {
-    width: 70px;
-    padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.customization-controls {
+/* Quantity Controls Container */
+.quantity-controls {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
 }
+
+/* Quantity Buttons */
+.quantity-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    width: 25px;
+    cursor: pointer;
+}
+
+.quantity-btn:disabled {
+    background: #6c757d;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
 
 .customization-checkbox {
     width: 20px;
     height: 20px;
     cursor: pointer;
     accent-color: #007bff;
+}
+
+.item-total {
+    font-weight: 600;
+    color: #28a745;
+    text-align: right;
+}
+
+.grand-total-row {
+    display: contents;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #007bff;
+    border-top: 2px solid #007bff;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.grand-total-label {
+    font-weight: bold;
+    color: #007bff;
+    padding-top: 8px;
+    border-top: 2px solid #e9ecef;
+}
+
+.grand-total-amount {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.2em;
+    text-align: right;
+    padding-top: 8px;
+    border-top: 2px solid #e9ecef;
 }
 
