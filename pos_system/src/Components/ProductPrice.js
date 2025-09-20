@@ -37,7 +37,7 @@ const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomiza
                             </div>
                             {item?.isMainIngredient && (
                                 <div className="badge-row">
-                                    <span className="main-ingredient-badge">Main Item</span>
+                                    <span className="main-ingredient-badge">Main</span>
                                 </div>
                             )}
                         </div>
