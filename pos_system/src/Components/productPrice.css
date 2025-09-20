@@ -101,6 +101,13 @@
     font-weight: 600;
 }
 
+.temp-quantity-controls span.quantity-error {
+    color: #dc3545;
+    background: #f8d7da;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
 /* Mobile and Tablet Optimizations */
 @media (max-width: 768px) {
     .menu-item-container {

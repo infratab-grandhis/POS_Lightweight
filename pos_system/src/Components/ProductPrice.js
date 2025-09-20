@@ -2,7 +2,7 @@ import React from 'react';
 import PriceDisplay from './common/PriceDisplay';
 import './productPrice.css';
 
-const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomizations, onCustomizationChange }) => {
+const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomizations, onCustomizationChange, maxQuantity = 999 }) => {
     // Calculate dynamic totals based on current quantity and customizations
     const calculateItemTotal = (item) => {
         const qty = parseFloat(quantity) || 0;
@@ -47,9 +47,10 @@ const ProductPrice = ({ itemsList, quantity, onQuantityChange, selectedCustomiza
                                     onClick={() => onQuantityChange(Math.max(1, quantity - 1))}
                                     disabled={quantity <= 1}
                                 >-</button>
-                                <span>{quantity}</span>
+                                <span className={quantity > maxQuantity ? 'quantity-error' : ''}>{quantity}</span>
                                 <button 
-                                    onClick={() => onQuantityChange(quantity + 1)}
+                                    onClick={() => onQuantityChange(Math.min(maxQuantity, quantity + 1))}
+                                    disabled={quantity >= maxQuantity}
                                 >+</button>
                             </div>
                         ) : (

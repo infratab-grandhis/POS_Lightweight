@@ -83,7 +83,7 @@ const inventory = [
     {
         "productId": "2001",
         "unit": "pieces",
-        "available": 25
+        "available": 3
     },
     {
         "productId": "2002",
@@ -91,14 +91,14 @@ const inventory = [
         "available": 40
     },
     {
-        "productId": "2003",
+        "productId": "2003", // Lemonade
         "unit": "cups",
-        "available": 60
+        "available": 10 // Out of stock for testing
     },
     {
-        "productId": "2004",
+        "productId": "2004", // Wrap
         "unit": "wraps",
-        "available": 18
+        "available": 15
     }
 ];
 

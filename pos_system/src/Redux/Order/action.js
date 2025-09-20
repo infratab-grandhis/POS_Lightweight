@@ -10,6 +10,10 @@ export const REMOVE_CUSTOMIZATION = 'REMOVE_CUSTOMIZATION';
 export const ADD_TO_ORDER_HISTORY = 'ADD_TO_ORDER_HISTORY';
 export const CLEAR_ORDER_HISTORY = 'CLEAR_ORDER_HISTORY';
 
+// Inventory Actions
+export const UPDATE_INVENTORY = 'UPDATE_INVENTORY';
+export const RESTORE_INVENTORY = 'RESTORE_INVENTORY';
+
 // Action Creators
 export const addToCart = (product, quantity = 1, customizations = []) => ({
     type: ADD_TO_CART,
@@ -23,6 +27,40 @@ export const addToCart = (product, quantity = 1, customizations = []) => ({
         addedAt: new Date().toISOString()
     }
 });
+
+// Inventory Action Creators
+export const updateInventory = (productId, quantityUsed) => ({
+    type: UPDATE_INVENTORY,
+    payload: { productId, quantityUsed }
+});
+
+export const restoreInventory = (productId, quantityToRestore) => ({
+    type: RESTORE_INVENTORY,
+    payload: { productId, quantityToRestore }
+});
+
+// Enhanced addToCart with inventory validation
+export const addToCartWithInventoryCheck = (product, quantity = 1, customizations = []) => {
+    return (dispatch, getState) => {
+        const state = getState();
+        const inventory = state.orderReducer.inventory;
+        const productInventory = inventory.find(item => item.productId === product.id);
+        
+        if (!productInventory) {
+            throw new Error(`No inventory data found for ${product.label}`);
+        }
+        
+        if (productInventory.available < quantity) {
+            throw new Error(`Insufficient stock! Only ${productInventory.available} ${productInventory.unit} available for ${product.label}`);
+        }
+        
+        // Add to cart
+        dispatch(addToCart(product, quantity, customizations));
+        
+        // Update inventory
+        dispatch(updateInventory(product.id, quantity));
+    };
+};
 
 export const removeFromCart = (cartItemId) => ({
     type: REMOVE_FROM_CART,

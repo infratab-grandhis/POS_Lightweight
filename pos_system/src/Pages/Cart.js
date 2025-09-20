@@ -12,6 +12,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const cartItems = useSelector(state => state.orderReducer.cart);
+    const inventory = useSelector(state => state.orderReducer.inventory);
     
     // Calculate total
     const total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
@@ -21,9 +22,23 @@ const Cart = () => {
     };
 
     const handleQuantityChange = (itemId, newQuantity) => {
-        if (newQuantity > 0) {
-            dispatch(updateCartQuantity(itemId, newQuantity));
+        if (newQuantity <= 0) return;
+        
+        const cartItem = cartItems.find(item => item.id === itemId);
+        if (!cartItem) return;
+        
+        const productInventory = inventory.find(inv => inv.productId === cartItem.productId);
+        if (!productInventory) return;
+        
+        // Calculate available stock (current inventory + quantity already in cart)
+        const availableStock = productInventory.available + cartItem.quantity;
+        
+        if (newQuantity > availableStock) {
+            alert(`❌ Cannot add more! Only ${availableStock} ${productInventory.unit} available in stock.`);
+            return;
         }
+        
+        dispatch(updateCartQuantity(itemId, newQuantity));
     };
 
     const handleClearCart = () => {
