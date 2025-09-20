@@ -33,7 +33,7 @@ const Home = () => {
         <OuterLayout>
             <div style={containerStyles}>
                 <h3>Welcome To the Food-Truck-POS</h3>
-                <button style={buttonStyles} onClick={navigateToProductsPage}>Start Here</button>
+                <button className='button-primary' onClick={navigateToProductsPage}>Start Here</button>
             </div>
         </OuterLayout>
     );

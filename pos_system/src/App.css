@@ -1,3 +1,16 @@
+.button-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
 .text-overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -17,9 +30,15 @@
     justify-content: flex-start;
     column-gap: 5px;
     margin: 5px;
+    position: relative;
 
     .product-image {
       width: 100%;
+    }
+
+    .button-primary {
+      align-self: flex-end;
+      margin-top: 8px;
     }
   }
 }

@@ -22,6 +22,7 @@ const Product = ({ product }) => {
                 expand && (
                     <section className='product-info'>
                         <ProductPrice itemsList={items} />
+                        <button className='button-primary'>ADD</button>
                     </section>
                 )
             }
