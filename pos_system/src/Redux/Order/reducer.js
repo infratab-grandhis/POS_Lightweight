@@ -11,9 +11,9 @@ import {
     UPDATE_INVENTORY,
     RESTORE_INVENTORY,
     RESET_INVENTORY,
-    UPDATE_ORDER_STATUS
+    UPDATE_ORDER_STATUS,
+    UPDATE_ORDER_SYNC_STATUS
 } from "./action";
-import { ORDER_STATUS } from '../../utils/orderStatusMachine';
 import { 
     FETCH_INVENTORY_SUCCESS,
     FETCH_ORDERS_START,
@@ -194,6 +194,16 @@ const orderReducer = (state = initialState, action) => {
                 ...state,
                 ordersLoading: false,
                 ordersError: payload
+            };
+
+        case UPDATE_ORDER_SYNC_STATUS:
+            return {
+                ...state,
+                orderHistory: state.orderHistory.map(order =>
+                    order.id === payload.orderId
+                        ? { ...order, syncStatus: payload.syncStatus }
+                        : order
+                )
             };
 
         default:

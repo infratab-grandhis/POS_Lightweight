@@ -111,9 +111,9 @@ const OrderHistory = () => {
                 <div className="order-history-header">
                     <h2>Order History ({orderHistory.length})</h2>
                     <div className="header-actions">
-                        <Button onClick={handleClearHistory} variant="danger" size="small">
+                        {/* <Button onClick={handleClearHistory} variant="danger" size="small">
                             Clear History
-                        </Button>
+                        </Button> */}
                         <Button onClick={handleBackToProducts} variant="primary" size="small">
                             Continue Shopping
                         </Button>

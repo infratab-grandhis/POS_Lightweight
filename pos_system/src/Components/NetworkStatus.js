@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { showSuccessNotification, showErrorNotification } from '../Redux/Notification/actions';
+import { syncOfflineOrders } from '../Redux/Order/action';
 import './NetworkStatus.css';
 
 const NetworkStatus = ({ compact = false }) => {
@@ -46,6 +47,13 @@ const NetworkStatus = ({ compact = false }) => {
             }
         }
     };
+
+    const handleManualSync = () => {
+        dispatch(syncOfflineOrders());
+    };
+
+    // Get pending orders count
+    const pendingOrdersCount = orderHistory.filter(order => order.syncStatus === 'pending').length;
 
     // Compact version for navbar
     if (compact) {
@@ -131,6 +139,8 @@ const NetworkStatus = ({ compact = false }) => {
                             <p>Cart Items: {cartItems.length}</p>
                             <p>Order History: {orderHistory.length}</p>
                             <p>Inventory Items: {inventory.length}</p>
+                            <p>🔄 Pending Orders: {pendingOrdersCount}</p>
+                            <p>✅ Synced Orders: {orderHistory.filter(o => o.syncStatus === 'synced').length}</p>
                         </div>
                     </div>
 
@@ -141,6 +151,26 @@ const NetworkStatus = ({ compact = false }) => {
                         >
                             🗑️ Clear Data
                         </button>
+                        
+                        {pendingOrdersCount > 0 && (
+                            <button 
+                                onClick={handleManualSync}
+                                className="sync-btn"
+                                disabled={!isOnline}
+                                style={{
+                                    backgroundColor: isOnline ? '#28a745' : '#6c757d',
+                                    color: 'white',
+                                    border: 'none',
+                                    padding: '6px 10px',
+                                    borderRadius: '4px',
+                                    cursor: isOnline ? 'pointer' : 'not-allowed',
+                                    marginTop: '4px',
+                                    fontSize: '12px'
+                                }}
+                            >
+                                🔄 Sync {pendingOrdersCount} Order{pendingOrdersCount !== 1 ? 's' : ''}
+                            </button>
+                        )}
 
                         <button
                             onClick={() => window.location.reload()}

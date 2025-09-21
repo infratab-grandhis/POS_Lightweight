@@ -10,7 +10,7 @@ const Products = () => {
     const productsList = useSelector(state => state.productReducer.productsList);
     const loading = useSelector(state => state.productReducer.loading);
     const error = useSelector(state => state.productReducer.error);
-    const pagination = useSelector(state => state.productReducer.pagination);
+    // const pagination = useSelector(state => state.productReducer.pagination); // Not used currently
     const inventory = useSelector(state => state.orderReducer.inventory);
     
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -188,31 +188,31 @@ const Products = () => {
                     </div>
                 )}
 
-                {/* Loading indicator and intersection target */}
-                {(hasMore || productsList.length >= PRODUCTS_PER_PAGE) && (
-                    <div 
-                        ref={loadingRef} 
-                        className="loading-container"
-                        style={{
-                            height: '100px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            margin: '20px 0'
-                        }}
-                    >
-                        {isLoadingMore ? (
-                            <div className="loading-spinner">
-                                <div className="spinner"></div>
-                                <p>Loading more delicious items...</p>
+                        {/* Loading indicator and intersection target */}
+                        {(hasMore || productsList.length >= PRODUCTS_PER_PAGE) && (
+                            <div 
+                                ref={loadingRef} 
+                                className="loading-container"
+                                style={{
+                                    height: '100px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    margin: '20px 0'
+                                }}
+                            >
+                                {isLoadingMore ? (
+                                    <div className="loading-spinner">
+                                        <div className="spinner"></div>
+                                        <p>Loading more delicious items...</p>
+                                    </div>
+                                ) : hasMore ? (
+                                    <p style={{ color: '#666' }}>Scroll to load more...</p>
+                                ) : (
+                                    <p style={{ color: '#999' }}>All products loaded</p>
+                                )}
                             </div>
-                        ) : hasMore ? (
-                            <p style={{ color: '#666' }}>Scroll to load more...</p>
-                        ) : (
-                            <p style={{ color: '#999' }}>All products loaded</p>
                         )}
-                    </div>
-                )}
 
                 {!hasMore && productsList.length > 0 && (
                     <div style={{ textAlign: 'center', padding: '40px', color: '#666' }}>

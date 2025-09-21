@@ -11,6 +11,7 @@ A modern, lightweight Point of Sale (POS) system built with React and Redux, des
 - **Order History**: View and manage past orders with status tracking
 - **Inventory Management**: Real-time stock tracking and low-stock alerts
 - **Receipt Printing**: Professional thermal receipt printing with React-to-print
+- **Offline Sync**: Automatic order synchronization when network is restored
 
 ### 🍳 **Kitchen Management System**
 - **Kitchen Display**: Kanban-style order management (Preparing → Ready → Delivered)
@@ -182,6 +183,110 @@ PREPARING → READY → DELIVERED
 - **Item Summary**: First 2 items with "more" indicator
 - **Action Buttons**: Context-aware status transition buttons
 - **Empty States**: Friendly messages when no orders in each status
+
+## 🔄 Offline Sync Workflow
+
+The POS system includes a robust offline-first architecture that ensures orders are never lost, even when the network connection is unstable.
+
+### **How Offline Sync Works**
+
+#### **1. Order Creation Flow**
+```
+Online:  Customer Order → API Call → ✅ Saved to Server → Status: 'synced'
+Offline: Customer Order → ❌ API Fails → 💾 Saved Locally → Status: 'pending'
+```
+
+#### **2. Network Detection & Auto-Sync**
+```
+📡 Network Events → OfflineSync Service → Check Pending Orders → Sync to API
+```
+
+#### **3. Sync Process**
+```
+1. User goes offline → Orders marked as 'pending'
+2. Network restored → Automatic sync triggered (1s delay)
+3. Pending orders → API batch sync → Status updated to 'synced'
+4. Success notification → Order history refreshed
+```
+
+### **Offline Sync Features**
+
+#### **🔧 Technical Implementation**
+- **OfflineSync Service**: Singleton service monitoring network events
+- **Redux Persist**: Orders cached in localStorage for offline access  
+- **Automatic Detection**: `navigator.onLine` and network event listeners
+- **Retry Logic**: Failed syncs retry on next network restoration
+- **Status Tracking**: Each order has `syncStatus: 'pending'|'synced'`
+
+#### **🎯 User Experience**
+- **Transparent Operation**: Orders work normally offline and online
+- **Visual Indicators**: Network status and pending order counts
+- **Manual Sync**: Users can trigger sync manually via NetworkStatus
+- **No Data Loss**: All offline orders preserved until successfully synced
+- **Real-time Updates**: Immediate feedback when sync completes
+
+#### **📱 Network Status Component**
+- **Online/Offline Indicator**: Visual connection status
+- **Pending Orders Count**: Shows unsynced orders
+- **Manual Sync Button**: Appears when pending orders exist
+- **System Statistics**: Cart, orders, inventory counts
+- **Data Management**: Clear cache and refresh options
+
+### **Offline Workflow Example**
+
+#### **Scenario: Network Interruption During Rush Hour**
+```
+1. 🍔 Customer places order → ✅ Saved locally as 'pending'
+2. 📱 Staff sees "offline" indicator but continues taking orders
+3. 🌐 Network restored → 🔄 Auto-sync triggers
+4. ✅ All pending orders sync to server
+5. 📊 Kitchen display updates with new orders
+6. 🎉 Success notification: "3 offline orders synced!"
+```
+
+#### **Manual Sync Process**
+```
+1. Click network indicator (top-right) → Opens NetworkStatus panel
+2. See "🔄 Pending Orders: 2" → Click "🔄 Sync 2 Orders" button  
+3. Orders sync to API → Status updates to 'synced'
+4. Kitchen display refreshes → Orders appear in kitchen workflow
+```
+
+### **Sync Error Handling**
+
+#### **Graceful Failures**
+- **Network Timeout**: Orders remain 'pending', retry on next online event
+- **API Server Down**: Orders cached locally until server available
+- **Partial Sync**: Successfully synced orders marked 'synced', failures remain 'pending'
+- **User Feedback**: Clear error notifications with retry options
+
+#### **Data Integrity**
+- **Unique Order IDs**: Prevents duplicate orders during sync
+- **Timestamp Preservation**: Original order time maintained
+- **Status History**: Complete audit trail including offline periods
+- **Redux Persistence**: Orders survive app refreshes and crashes
+
+### **Development & Testing**
+
+#### **Simulating Offline Scenarios**
+```bash
+# Chrome DevTools
+1. Open DevTools → Network Tab
+2. Select "Offline" from throttling dropdown
+3. Place orders → Check pending status
+4. Switch to "Online" → Watch auto-sync
+
+# Manual Testing
+- Disconnect WiFi during checkout
+- Use browser's offline mode
+- Test with mobile data interruptions
+```
+
+#### **Monitoring Sync Status**
+- **Redux DevTools**: Monitor order `syncStatus` changes
+- **Network Panel**: Track API sync calls
+- **Console Logs**: Sync events and error handling (dev mode)
+- **NetworkStatus UI**: Real-time sync statistics
 
 ## 📱 Responsive Features
 

@@ -8,8 +8,10 @@ import Cart from './Pages/Cart';
 import OrderHistory from './Pages/OrderHistory';
 import KitchenDisplay from './Pages/KitchenDisplay';
 import NotificationSystem from './Components/Notification/NotificationSystem';
+import './utils/offlineSync'; // Initialize offline sync
 
 function App() {
+  
   return (
     <div className="App">
       <BrowserRouter>

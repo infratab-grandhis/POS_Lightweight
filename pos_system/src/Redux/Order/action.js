@@ -1,5 +1,6 @@
 import { ORDER_STATUSES, validateStatusTransition, calculateEstimatedCompletion } from '../../utils/orderStatusMachine';
 import ApiService from '../../services/api';
+import { showSuccessNotification, showErrorNotification } from '../Notification/actions';
 
 // Cart Actions
 export const ADD_TO_CART = 'ADD_TO_CART';
@@ -15,6 +16,7 @@ export const CLEAR_ORDER_HISTORY = 'CLEAR_ORDER_HISTORY';
 
 // Order Status Actions
 export const UPDATE_ORDER_STATUS = 'UPDATE_ORDER_STATUS';
+export const UPDATE_ORDER_SYNC_STATUS = 'UPDATE_ORDER_SYNC_STATUS';
 export const ADD_ORDER_STATUS_HISTORY = 'ADD_ORDER_STATUS_HISTORY';
 
 // Inventory Actions
@@ -150,23 +152,23 @@ export const createOrder = (cartItems, totalAmount, paymentMethod = 'Card', cust
             const result = await ApiService.createOrder(orderData);
             
             if (result.success) {
-                // Add to local Redux state
+                // Add to local Redux state (synced)
                 dispatch({
                     type: ADD_TO_ORDER_HISTORY,
-                    payload: orderData
+                    payload: { ...orderData, syncStatus: 'synced' }
                 });
             } else {
-                // Still add to local state as fallback
+                // Add to local state as pending sync
                 dispatch({
                     type: ADD_TO_ORDER_HISTORY,
-                    payload: orderData
+                    payload: { ...orderData, syncStatus: 'pending' }
                 });
             }
         } catch (error) {
-            // Still add to local state as fallback
+            // Add to local state as pending sync (offline order)
             dispatch({
                 type: ADD_TO_ORDER_HISTORY,
-                payload: orderData
+                payload: { ...orderData, syncStatus: 'pending', offlineCreated: true }
             });
         }
     };
@@ -175,6 +177,46 @@ export const createOrder = (cartItems, totalAmount, paymentMethod = 'Card', cust
 export const clearOrderHistory = () => ({
     type: CLEAR_ORDER_HISTORY
 });
+
+// Sync offline orders when coming back online
+export const syncOfflineOrders = () => {
+    return async (dispatch, getState) => {
+        const state = getState();
+        const pendingOrders = state.orderReducer.orderHistory.filter(
+            order => order.syncStatus === 'pending'
+        );
+
+        if (pendingOrders.length === 0) {
+            return;
+        }
+
+        try {
+            const result = await ApiService.syncOfflineOrders(pendingOrders);
+            
+            if (result.success) {
+                // Mark orders as synced
+                pendingOrders.forEach(order => {
+                    dispatch({
+                        type: UPDATE_ORDER_SYNC_STATUS,
+                        payload: { orderId: order.id, syncStatus: 'synced' }
+                    });
+                });
+                
+                // Show success notification
+                dispatch(showSuccessNotification(
+                    `${pendingOrders.length} offline orders synced successfully!`,
+                    { title: 'Sync Complete', duration: 3000 }
+                ));
+            }
+        } catch (error) {
+            // Show error notification
+            dispatch(showErrorNotification(
+                `Failed to sync offline orders: ${error.message}`,
+                { title: 'Sync Failed' }
+            ));
+        }
+    };
+};
 
 // Combined Checkout Action
 export const processCheckout = (cartItems, totalAmount, paymentMethod = 'Card') => {

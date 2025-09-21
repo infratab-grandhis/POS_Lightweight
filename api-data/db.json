@@ -3198,67 +3198,39 @@
   ],
   "orders": [
     {
-      "id": "order_1758458420743",
-      "orderId": "ORD-1758458420743",
+      "id": "order_1758464414119",
+      "orderId": "ORD-1758464414119",
       "items": [
         {
-          "id": "3001_1758458395547",
-          "productId": "3001",
+          "id": "3024_1758464406511",
+          "productId": "3024",
           "product": {
-            "id": "3001",
-            "label": "Classic Burger",
-            "name": "Classic Burger",
-            "category": "burgers",
-            "price": 175,
-            "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3001",
-            "description": "Delicious classic burger with fresh ingredients",
+            "id": "3024",
+            "label": "Smoothie",
+            "name": "Smoothie",
+            "category": "beverages",
+            "price": 120,
+            "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3024",
+            "description": "Fresh fruit smoothie",
             "isMainIngredient": true,
             "isActive": true,
             "tags": [
-              "popular",
-              "beef"
+              "healthy",
+              "fruit"
             ],
-            "customization": [
-              {
-                "id": "3001_c1",
-                "label": "Extra Cheese",
-                "price": 50,
-                "isMainIngredient": false
-              },
-              {
-                "id": "3001_c2",
-                "label": "Bacon",
-                "price": 70,
-                "isMainIngredient": false
-              },
-              {
-                "id": "3001_c3",
-                "label": "Avocado",
-                "price": 60,
-                "isMainIngredient": false
-              }
-            ]
+            "customization": []
           },
           "quantity": 1,
-          "customizations": [
-            {
-              "id": "3001_c3",
-              "label": "AVOCADO",
-              "price": 60,
-              "quantity": 0,
-              "total": 0,
-              "isMainIngredient": false
-            }
-          ],
-          "totalPrice": 235,
-          "addedAt": "2025-09-21T12:39:55.547Z"
+          "customizations": [],
+          "totalPrice": 120,
+          "addedAt": "2025-09-21T14:20:06.511Z"
         }
       ],
-      "totalAmount": 235,
+      "totalAmount": 120,
       "paymentMethod": "Card",
       "status": "delivered",
-      "orderDate": "2025-09-21T12:40:20.743Z",
-      "orderTime": "18:10:20",
+      "orderDate": "2025-09-21T14:20:14.119Z",
+      "orderTime": "19:50:14",
       "customerInfo": {
         "type": "Walk-in",
         "orderType": "Dine-in",
@@ -3267,27 +3239,88 @@
       "statusHistory": [
         {
           "status": "preparing",
-          "timestamp": "2025-09-21T12:40:20.743Z",
+          "timestamp": "2025-09-21T14:20:14.119Z",
           "updatedBy": "cashier",
           "notes": "Order placed and sent to kitchen"
         },
         {
           "status": "ready",
-          "timestamp": "2025-09-21T12:40:42.755Z",
+          "timestamp": "2025-09-21T14:21:41.442Z",
           "updatedBy": "kitchen",
           "notes": "Status changed to ready from Kitchen Display"
         },
         {
           "status": "delivered",
-          "timestamp": "2025-09-21T12:40:47.835Z",
+          "timestamp": "2025-09-21T14:21:42.679Z",
           "updatedBy": "kitchen",
           "notes": "Status changed to delivered from Kitchen Display"
         }
       ],
-      "estimatedCompletion": "2025-09-21T12:55:20.743Z",
-      "lastUpdated": "2025-09-21T12:40:47.835Z",
-      "createdAt": "2025-09-21T12:40:20.743Z",
-      "updatedAt": "2025-09-21T12:40:47.835Z",
+      "estimatedCompletion": "2025-09-21T14:35:14.119Z",
+      "lastUpdated": "2025-09-21T14:21:42.679Z",
+      "createdAt": "2025-09-21T14:20:14.119Z",
+      "updatedAt": "2025-09-21T14:21:42.679Z",
+      "updatedBy": "kitchen"
+    },
+    {
+      "id": "order_1758464454457",
+      "orderId": "ORD-1758464454457",
+      "items": [
+        {
+          "id": "3019_1758464438162",
+          "productId": "3019",
+          "product": {
+            "id": "3019",
+            "label": "Apple Juice",
+            "name": "Apple Juice",
+            "category": "beverages",
+            "price": 90,
+            "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3019",
+            "description": "Fresh apple juice",
+            "isMainIngredient": true,
+            "isActive": true,
+            "tags": [
+              "healthy",
+              "fresh"
+            ],
+            "customization": []
+          },
+          "quantity": 1,
+          "customizations": [],
+          "totalPrice": 90,
+          "addedAt": "2025-09-21T14:20:38.162Z"
+        }
+      ],
+      "totalAmount": 90,
+      "paymentMethod": "Card",
+      "status": "cancelled",
+      "orderDate": "2025-09-21T14:20:54.457Z",
+      "orderTime": "19:50:54",
+      "customerInfo": {
+        "type": "Walk-in",
+        "orderType": "Dine-in",
+        "customerName": "Walk-in Customer"
+      },
+      "statusHistory": [
+        {
+          "status": "preparing",
+          "timestamp": "2025-09-21T14:20:54.457Z",
+          "updatedBy": "cashier",
+          "notes": "Order placed and sent to kitchen"
+        },
+        {
+          "status": "cancelled",
+          "timestamp": "2025-09-21T14:21:44.032Z",
+          "updatedBy": "kitchen",
+          "notes": "Status changed to cancelled from Kitchen Display"
+        }
+      ],
+      "estimatedCompletion": "2025-09-21T14:35:54.457Z",
+      "lastUpdated": "2025-09-21T14:21:44.032Z",
+      "syncStatus": "synced",
+      "offlineCreated": true,
+      "createdAt": "2025-09-21T14:21:33.266Z",
+      "updatedAt": "2025-09-21T14:21:44.032Z",
       "updatedBy": "kitchen"
     }
   ],

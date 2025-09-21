@@ -34,7 +34,8 @@
 .item-name-row {
     display: flex;
     gap: 4px;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
