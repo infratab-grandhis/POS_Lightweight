@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { removeFromCart, updateCartQuantity, clearCart, processCheckout } from '../Redux/Order/action';
+import { removeFromCart, updateCartQuantity, clearCart, processCheckoutWithStatus } from '../Redux/Order/action';
 import { showWarningNotification, showOrderSuccessNotification } from '../Redux/Notification/actions';
 import Button from '../Components/common/Button';
 import EmptyState from '../Components/common/EmptyState';
 import PriceDisplay from '../Components/common/PriceDisplay';
 import OuterLayout from '../Layouts/OuterLayout';
+import pages from './Constants';
 import './Cart.css';
 
 const Cart = () => {
@@ -70,12 +71,15 @@ const Cart = () => {
         // Show success notification
         dispatch(showOrderSuccessNotification(orderData.orderId, total));
         
-        // Process checkout (adds to order history AND clears cart)
-        dispatch(processCheckout(cartItems, total));
+        // Process checkout with status tracking (adds to order history AND clears cart)
+        dispatch(processCheckoutWithStatus(cartItems, total, 'Card', {
+            customerName: 'Walk-in Customer',
+            orderType: 'Dine-in'
+        }));
         
         // Navigate to order history with success message
         setTimeout(() => {
-            navigate('/order-history');
+            navigate(pages.orderHistory);
         }, 100);
     };
 
@@ -88,7 +92,7 @@ const Cart = () => {
                         title="Your cart is empty"
                         message="Add some delicious items to get started!"
                         actionText="Continue Shopping"
-                        onAction={() => window.history.back()}
+                        onAction={() => navigate(pages.products)}
                     />
                 </div>
             </OuterLayout>

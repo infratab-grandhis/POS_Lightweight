@@ -1,5 +1,5 @@
 // Simple Service Worker for Offline Caching
-const CACHE_NAME = 'pos-system-v1';
+const CACHE_NAME = 'pos-system-v2';
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',
@@ -17,6 +17,11 @@ self.addEventListener('install', (event) => {
 
 // Fetch from Cache (Offline-First Strategy)
 self.addEventListener('fetch', (event) => {
+  // Skip caching for external URLs (like placeholder images)
+  if (!event.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then((response) => {

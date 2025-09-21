@@ -1,9 +1,10 @@
-import metaData from "../Product/metaData";
-
+// Updated to use API data instead of hardcoded data
 const initialState = {
     orderHistory: [],
     cart: [],
-    inventory: [...metaData.inventory] // Always use fresh inventory from metaData
+    inventory: [], // Will be loaded from API
+    ordersLoading: false,
+    ordersError: null
 };
 
 export default initialState;

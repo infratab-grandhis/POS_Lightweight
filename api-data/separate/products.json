@@ -1,0 +1,2195 @@
+[
+  {
+    "id": "3001",
+    "label": "Classic Burger",
+    "name": "Classic Burger",
+    "category": "burgers",
+    "price": 175,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3001",
+    "description": "Delicious classic burger with fresh ingredients",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "beef"
+    ],
+    "customization": [
+      {
+        "id": "3001_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3001_c2",
+        "label": "Bacon",
+        "price": 70,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3001_c3",
+        "label": "Avocado",
+        "price": 60,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3002",
+    "label": "Cheese Burger",
+    "name": "Cheese Burger",
+    "category": "burgers",
+    "price": 205,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3002",
+    "description": "Classic cheeseburger with melted cheese",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "beef",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3002_c1",
+        "label": "Mushrooms",
+        "price": 40,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3002_c2",
+        "label": "Onions",
+        "price": 30,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3002_c3",
+        "label": "BBQ Sauce",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3003",
+    "label": "Bacon Burger",
+    "name": "Bacon Burger",
+    "category": "burgers",
+    "price": 230,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3003",
+    "description": "Juicy burger with crispy bacon strips",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "bacon",
+      "beef"
+    ],
+    "customization": [
+      {
+        "id": "3003_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3003_c2",
+        "label": "Mayo",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3009",
+    "label": "Margherita",
+    "name": "Margherita",
+    "category": "pizza",
+    "price": 285,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3009",
+    "description": "Classic margherita pizza with fresh basil and tomatoes",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "vegetarian"
+    ],
+    "customization": [
+      {
+        "id": "3009_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3009_c2",
+        "label": "Mushrooms",
+        "price": 40,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3010",
+    "label": "Pepperoni",
+    "name": "Pepperoni",
+    "category": "pizza",
+    "price": 320,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3010",
+    "description": "Classic pepperoni pizza with spicy pepperoni slices",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "spicy"
+    ],
+    "customization": [
+      {
+        "id": "3010_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3010_c2",
+        "label": "Spicy Sauce",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3017",
+    "label": "Cola",
+    "name": "Cola",
+    "category": "beverages",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3017",
+    "description": "Refreshing cola drink",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "refreshing",
+      "cold"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3018",
+    "label": "Orange Juice",
+    "name": "Orange Juice",
+    "category": "beverages",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3018",
+    "description": "Fresh orange juice",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "fresh"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3025",
+    "label": "French Fries",
+    "name": "French Fries",
+    "category": "snacks",
+    "price": 110,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3025",
+    "description": "Crispy golden french fries",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3025_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3025_c2",
+        "label": "BBQ Sauce",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3026",
+    "label": "Onion Rings",
+    "name": "Onion Rings",
+    "category": "snacks",
+    "price": 125,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3026",
+    "description": "Crispy breaded onion rings",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "crispy",
+      "vegetarian"
+    ],
+    "customization": [
+      {
+        "id": "3026_c1",
+        "label": "Mayo",
+        "price": 20,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3026_c2",
+        "label": "Spicy Sauce",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3033",
+    "label": "Club Sandwich",
+    "name": "Club Sandwich",
+    "category": "sandwiches",
+    "price": 190,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3033",
+    "description": "Triple-layer club sandwich with turkey, bacon, and vegetables",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "hearty",
+      "popular"
+    ],
+    "customization": [
+      {
+        "id": "3033_c1",
+        "label": "Avocado",
+        "price": 60,
+        "isMainIngredient": false
+      },
+      {
+        "id": "3033_c2",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3004",
+    "label": "Veggie Burger",
+    "name": "Veggie Burger",
+    "category": "burgers",
+    "price": 185,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3004",
+    "description": "Healthy vegetarian burger with fresh vegetables",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "vegetarian",
+      "healthy"
+    ],
+    "customization": [
+      {
+        "id": "3004_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3005",
+    "label": "Double Burger",
+    "name": "Double Burger",
+    "category": "burgers",
+    "price": 250,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3005",
+    "description": "Double patty burger for extra appetite",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "hearty"
+    ],
+    "customization": [
+      {
+        "id": "3005_c1",
+        "label": "BBQ Sauce",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3006",
+    "label": "BBQ Burger",
+    "name": "BBQ Burger",
+    "category": "burgers",
+    "price": 220,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3006",
+    "description": "Smoky BBQ burger with special sauce",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "bbq",
+      "smoky"
+    ],
+    "customization": [
+      {
+        "id": "3006_c1",
+        "label": "Onion Rings",
+        "price": 40,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3007",
+    "label": "Mushroom Burger",
+    "name": "Mushroom Burger",
+    "category": "burgers",
+    "price": 195,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3007",
+    "description": "Burger with sautéed mushrooms",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "mushroom",
+      "savory"
+    ],
+    "customization": [
+      {
+        "id": "3007_c1",
+        "label": "Swiss Cheese",
+        "price": 45,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3008",
+    "label": "Fish Burger",
+    "name": "Fish Burger",
+    "category": "burgers",
+    "price": 210,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3008",
+    "description": "Crispy fish fillet burger",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "fish",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3008_c1",
+        "label": "Tartar Sauce",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3011",
+    "label": "Supreme Pizza",
+    "name": "Supreme Pizza",
+    "category": "pizza",
+    "price": 350,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3011",
+    "description": "Loaded supreme pizza with all toppings",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "popular",
+      "loaded"
+    ],
+    "customization": [
+      {
+        "id": "3011_c1",
+        "label": "Extra Cheese",
+        "price": 50,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3012",
+    "label": "Hawaiian Pizza",
+    "name": "Hawaiian Pizza",
+    "category": "pizza",
+    "price": 325,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3012",
+    "description": "Pizza with ham and pineapple",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "sweet",
+      "tropical"
+    ],
+    "customization": [
+      {
+        "id": "3012_c1",
+        "label": "Extra Ham",
+        "price": 60,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3013",
+    "label": "Meat Lovers Pizza",
+    "name": "Meat Lovers Pizza",
+    "category": "pizza",
+    "price": 380,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3013",
+    "description": "Pizza loaded with various meats",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "meaty",
+      "hearty"
+    ],
+    "customization": [
+      {
+        "id": "3013_c1",
+        "label": "Extra Pepperoni",
+        "price": 70,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3014",
+    "label": "Veggie Supreme Pizza",
+    "name": "Veggie Supreme Pizza",
+    "category": "pizza",
+    "price": 310,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3014",
+    "description": "Vegetarian pizza with fresh vegetables",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "vegetarian",
+      "healthy"
+    ],
+    "customization": [
+      {
+        "id": "3014_c1",
+        "label": "Olives",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3015",
+    "label": "BBQ Chicken Pizza",
+    "name": "BBQ Chicken Pizza",
+    "category": "pizza",
+    "price": 340,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3015",
+    "description": "Pizza with BBQ chicken and onions",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "bbq",
+      "chicken"
+    ],
+    "customization": [
+      {
+        "id": "3015_c1",
+        "label": "Red Onions",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3016",
+    "label": "White Sauce Pizza",
+    "name": "White Sauce Pizza",
+    "category": "pizza",
+    "price": 330,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3016",
+    "description": "Pizza with creamy white sauce",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "unique"
+    ],
+    "customization": [
+      {
+        "id": "3016_c1",
+        "label": "Garlic",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3019",
+    "label": "Apple Juice",
+    "name": "Apple Juice",
+    "category": "beverages",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3019",
+    "description": "Fresh apple juice",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "fresh"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3020",
+    "label": "Lemonade",
+    "name": "Lemonade",
+    "category": "beverages",
+    "price": 80,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3020",
+    "description": "Fresh squeezed lemonade",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "refreshing",
+      "citrus"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3021",
+    "label": "Iced Tea",
+    "name": "Iced Tea",
+    "category": "beverages",
+    "price": 75,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3021",
+    "description": "Cool iced tea",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "refreshing",
+      "cold"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3022",
+    "label": "Hot Coffee",
+    "name": "Hot Coffee",
+    "category": "beverages",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3022",
+    "description": "Hot brewed coffee",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "hot",
+      "caffeine"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3023",
+    "label": "Cappuccino",
+    "name": "Cappuccino",
+    "category": "beverages",
+    "price": 110,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3023",
+    "description": "Creamy cappuccino",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "coffee",
+      "creamy"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3024",
+    "label": "Smoothie",
+    "name": "Smoothie",
+    "category": "beverages",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3024",
+    "description": "Fresh fruit smoothie",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "fruit"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3027",
+    "label": "Chicken Wings",
+    "name": "Chicken Wings",
+    "category": "snacks",
+    "price": 150,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3027",
+    "description": "Spicy chicken wings",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "spicy",
+      "chicken"
+    ],
+    "customization": [
+      {
+        "id": "3027_c1",
+        "label": "Hot Sauce",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3028",
+    "label": "Mozzarella Sticks",
+    "name": "Mozzarella Sticks",
+    "category": "snacks",
+    "price": 135,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3028",
+    "description": "Crispy mozzarella sticks",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "cheese",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3028_c1",
+        "label": "Marinara Sauce",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3029",
+    "label": "Nachos",
+    "name": "Nachos",
+    "category": "snacks",
+    "price": 140,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3029",
+    "description": "Loaded nachos with cheese",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "loaded",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3029_c1",
+        "label": "Jalapeños",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3030",
+    "label": "Potato Wedges",
+    "name": "Potato Wedges",
+    "category": "snacks",
+    "price": 105,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3030",
+    "description": "Seasoned potato wedges",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "potato",
+      "seasoned"
+    ],
+    "customization": [
+      {
+        "id": "3030_c1",
+        "label": "Sour Cream",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3031",
+    "label": "Chicken Nuggets",
+    "name": "Chicken Nuggets",
+    "category": "snacks",
+    "price": 130,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3031",
+    "description": "Golden chicken nuggets",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3031_c1",
+        "label": "Honey Mustard",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3032",
+    "label": "Spring Rolls",
+    "name": "Spring Rolls",
+    "category": "snacks",
+    "price": 115,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3032",
+    "description": "Crispy vegetable spring rolls",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "vegetarian",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3032_c1",
+        "label": "Sweet Chili Sauce",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3034",
+    "label": "BLT Sandwich",
+    "name": "BLT Sandwich",
+    "category": "sandwiches",
+    "price": 170,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3034",
+    "description": "Classic bacon, lettuce, and tomato sandwich",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "classic",
+      "bacon"
+    ],
+    "customization": [
+      {
+        "id": "3034_c1",
+        "label": "Extra Bacon",
+        "price": 60,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3035",
+    "label": "Grilled Cheese",
+    "name": "Grilled Cheese",
+    "category": "sandwiches",
+    "price": 140,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3035",
+    "description": "Classic grilled cheese sandwich",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "comfort",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3035_c1",
+        "label": "Tomato",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3036",
+    "label": "Turkey Club",
+    "name": "Turkey Club",
+    "category": "sandwiches",
+    "price": 180,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3036",
+    "description": "Turkey club with fresh ingredients",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "turkey",
+      "fresh"
+    ],
+    "customization": [
+      {
+        "id": "3036_c1",
+        "label": "Avocado",
+        "price": 60,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3037",
+    "label": "Chicken Sandwich",
+    "name": "Chicken Sandwich",
+    "category": "sandwiches",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3037",
+    "description": "Grilled chicken sandwich",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "grilled"
+    ],
+    "customization": [
+      {
+        "id": "3037_c1",
+        "label": "Swiss Cheese",
+        "price": 45,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3038",
+    "label": "Chocolate Cake",
+    "name": "Chocolate Cake",
+    "category": "desserts",
+    "price": 160,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3038",
+    "description": "Rich chocolate cake slice",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chocolate",
+      "sweet"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3039",
+    "label": "Cheesecake",
+    "name": "Cheesecake",
+    "category": "desserts",
+    "price": 170,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3039",
+    "description": "Creamy New York style cheesecake",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "classic"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3040",
+    "label": "Ice Cream",
+    "name": "Ice Cream",
+    "category": "desserts",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3040",
+    "description": "Vanilla ice cream scoop",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "cold",
+      "vanilla"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3041",
+    "label": "Apple Pie",
+    "name": "Apple Pie",
+    "category": "desserts",
+    "price": 145,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3041",
+    "description": "Classic apple pie slice",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "apple",
+      "classic"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3042",
+    "label": "Brownie",
+    "name": "Brownie",
+    "category": "desserts",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3042",
+    "description": "Fudgy chocolate brownie",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chocolate",
+      "fudgy"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3043",
+    "label": "Caesar Salad",
+    "name": "Caesar Salad",
+    "category": "salads",
+    "price": 150,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3043",
+    "description": "Classic Caesar salad with croutons",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "classic"
+    ],
+    "customization": [
+      {
+        "id": "3043_c1",
+        "label": "Grilled Chicken",
+        "price": 80,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3044",
+    "label": "Greek Salad",
+    "name": "Greek Salad",
+    "category": "salads",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3044",
+    "description": "Mediterranean Greek salad with feta",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "mediterranean"
+    ],
+    "customization": [
+      {
+        "id": "3044_c1",
+        "label": "Extra Feta",
+        "price": 40,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3045",
+    "label": "Garden Salad",
+    "name": "Garden Salad",
+    "category": "salads",
+    "price": 130,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3045",
+    "description": "Fresh mixed greens salad",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "fresh"
+    ],
+    "customization": [
+      {
+        "id": "3045_c1",
+        "label": "Italian Dressing",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3046",
+    "label": "Fruit Salad",
+    "name": "Fruit Salad",
+    "category": "salads",
+    "price": 110,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3046",
+    "description": "Fresh seasonal fruit salad",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "fruit"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3047",
+    "label": "Spaghetti",
+    "name": "Spaghetti",
+    "category": "pasta",
+    "price": 200,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3047",
+    "description": "Classic spaghetti with marinara sauce",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "italian",
+      "classic"
+    ],
+    "customization": [
+      {
+        "id": "3047_c1",
+        "label": "Meatballs",
+        "price": 80,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3048",
+    "label": "Penne Arrabiata",
+    "name": "Penne Arrabiata",
+    "category": "pasta",
+    "price": 210,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3048",
+    "description": "Spicy penne pasta",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "spicy",
+      "italian"
+    ],
+    "customization": [
+      {
+        "id": "3048_c1",
+        "label": "Parmesan",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3049",
+    "label": "Fettuccine Alfredo",
+    "name": "Fettuccine Alfredo",
+    "category": "pasta",
+    "price": 240,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3049",
+    "description": "Creamy alfredo pasta",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "rich"
+    ],
+    "customization": [
+      {
+        "id": "3049_c1",
+        "label": "Grilled Chicken",
+        "price": 80,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3050",
+    "label": "Lasagna",
+    "name": "Lasagna",
+    "category": "pasta",
+    "price": 270,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3050",
+    "description": "Layered meat lasagna",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "hearty",
+      "layered"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3051",
+    "label": "Chicken Burger",
+    "name": "Chicken Burger",
+    "category": "burgers",
+    "price": 195,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3051",
+    "description": "Grilled chicken burger with lettuce and mayo",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "grilled"
+    ],
+    "customization": [
+      {
+        "id": "3051_c1",
+        "label": "Spicy Mayo",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3052",
+    "label": "Lamb Burger",
+    "name": "Lamb Burger",
+    "category": "burgers",
+    "price": 280,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3052",
+    "description": "Juicy lamb patty burger",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "lamb",
+      "premium"
+    ],
+    "customization": [
+      {
+        "id": "3052_c1",
+        "label": "Mint Sauce",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3053",
+    "label": "Turkey Burger",
+    "name": "Turkey Burger",
+    "category": "burgers",
+    "price": 215,
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&seed=3053",
+    "description": "Healthy turkey burger with herbs",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "turkey",
+      "healthy"
+    ],
+    "customization": [
+      {
+        "id": "3053_c1",
+        "label": "Cranberry Sauce",
+        "price": 35,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3054",
+    "label": "Buffalo Chicken Pizza",
+    "name": "Buffalo Chicken Pizza",
+    "category": "pizza",
+    "price": 360,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3054",
+    "description": "Spicy buffalo chicken with blue cheese",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "buffalo",
+      "spicy"
+    ],
+    "customization": [
+      {
+        "id": "3054_c1",
+        "label": "Extra Buffalo Sauce",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3055",
+    "label": "Four Cheese Pizza",
+    "name": "Four Cheese Pizza",
+    "category": "pizza",
+    "price": 340,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3055",
+    "description": "Blend of four premium cheeses",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "cheese",
+      "premium"
+    ],
+    "customization": [
+      {
+        "id": "3055_c1",
+        "label": "Truffle Oil",
+        "price": 50,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3056",
+    "label": "Mediterranean Pizza",
+    "name": "Mediterranean Pizza",
+    "category": "pizza",
+    "price": 355,
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&seed=3056",
+    "description": "Olives, feta, sun-dried tomatoes",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "mediterranean",
+      "olives"
+    ],
+    "customization": [
+      {
+        "id": "3056_c1",
+        "label": "Extra Olives",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3057",
+    "label": "Green Tea",
+    "name": "Green Tea",
+    "category": "beverages",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3057",
+    "description": "Healthy antioxidant green tea",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "tea"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3058",
+    "label": "Milkshake",
+    "name": "Milkshake",
+    "category": "beverages",
+    "price": 140,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3058",
+    "description": "Creamy vanilla milkshake",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "sweet"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3059",
+    "label": "Fresh Juice",
+    "name": "Fresh Juice",
+    "category": "beverages",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3059",
+    "description": "Mixed fresh fruit juice",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "fresh",
+      "healthy"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3060",
+    "label": "Energy Drink",
+    "name": "Energy Drink",
+    "category": "beverages",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&seed=3060",
+    "description": "Refreshing energy boost drink",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "energy",
+      "refreshing"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3061",
+    "label": "Fish Tacos",
+    "name": "Fish Tacos",
+    "category": "snacks",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3061",
+    "description": "Fresh fish tacos with lime",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "fish",
+      "mexican"
+    ],
+    "customization": [
+      {
+        "id": "3061_c1",
+        "label": "Guacamole",
+        "price": 40,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3062",
+    "label": "Quesadilla",
+    "name": "Quesadilla",
+    "category": "snacks",
+    "price": 155,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3062",
+    "description": "Cheese quesadilla with peppers",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "mexican",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3062_c1",
+        "label": "Sour Cream",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3063",
+    "label": "Loaded Fries",
+    "name": "Loaded Fries",
+    "category": "snacks",
+    "price": 145,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3063",
+    "description": "Fries with cheese, bacon, and jalapeños",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "loaded",
+      "comfort"
+    ],
+    "customization": [
+      {
+        "id": "3063_c1",
+        "label": "Extra Cheese",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3064",
+    "label": "Chicken Tenders",
+    "name": "Chicken Tenders",
+    "category": "snacks",
+    "price": 175,
+    "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=400&h=300&fit=crop&seed=3064",
+    "description": "Crispy chicken tenders with ranch",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3064_c1",
+        "label": "BBQ Sauce",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3065",
+    "label": "Philly Cheesesteak",
+    "name": "Philly Cheesesteak",
+    "category": "sandwiches",
+    "price": 225,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3065",
+    "description": "Classic Philadelphia cheesesteak",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "steak",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3065_c1",
+        "label": "Extra Peppers",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3066",
+    "label": "Reuben Sandwich",
+    "name": "Reuben Sandwich",
+    "category": "sandwiches",
+    "price": 195,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3066",
+    "description": "Corned beef with sauerkraut and Swiss",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "classic",
+      "corned beef"
+    ],
+    "customization": [
+      {
+        "id": "3066_c1",
+        "label": "Russian Dressing",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3067",
+    "label": "Cuban Sandwich",
+    "name": "Cuban Sandwich",
+    "category": "sandwiches",
+    "price": 185,
+    "image": "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=400&h=300&fit=crop&seed=3067",
+    "description": "Traditional Cuban with ham and pickles",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "cuban",
+      "pressed"
+    ],
+    "customization": [
+      {
+        "id": "3067_c1",
+        "label": "Extra Pickles",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3068",
+    "label": "Tiramisu",
+    "name": "Tiramisu",
+    "category": "desserts",
+    "price": 180,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3068",
+    "description": "Classic Italian coffee dessert",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "italian",
+      "coffee"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3069",
+    "label": "Crème Brûlée",
+    "name": "Crème Brûlée",
+    "category": "desserts",
+    "price": 195,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3069",
+    "description": "French vanilla custard with caramelized sugar",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "french",
+      "custard"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3070",
+    "label": "Gelato",
+    "name": "Gelato",
+    "category": "desserts",
+    "price": 125,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3070",
+    "description": "Italian-style ice cream",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "italian",
+      "creamy"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3071",
+    "label": "Panna Cotta",
+    "name": "Panna Cotta",
+    "category": "desserts",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop&seed=3071",
+    "description": "Creamy Italian dessert with berry sauce",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "italian",
+      "berry"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3072",
+    "label": "Cobb Salad",
+    "name": "Cobb Salad",
+    "category": "salads",
+    "price": 175,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3072",
+    "description": "Classic American salad with bacon and eggs",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "american",
+      "bacon"
+    ],
+    "customization": [
+      {
+        "id": "3072_c1",
+        "label": "Blue Cheese",
+        "price": 35,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3073",
+    "label": "Quinoa Salad",
+    "name": "Quinoa Salad",
+    "category": "salads",
+    "price": 155,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3073",
+    "description": "Healthy quinoa with vegetables",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "healthy",
+      "quinoa"
+    ],
+    "customization": [
+      {
+        "id": "3073_c1",
+        "label": "Avocado",
+        "price": 60,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3074",
+    "label": "Asian Salad",
+    "name": "Asian Salad",
+    "category": "salads",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&seed=3074",
+    "description": "Mixed greens with sesame dressing",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "asian",
+      "sesame"
+    ],
+    "customization": [
+      {
+        "id": "3074_c1",
+        "label": "Edamame",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3075",
+    "label": "Carbonara",
+    "name": "Carbonara",
+    "category": "pasta",
+    "price": 250,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3075",
+    "description": "Classic Roman pasta with eggs and pancetta",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "roman",
+      "creamy"
+    ],
+    "customization": [
+      {
+        "id": "3075_c1",
+        "label": "Extra Pancetta",
+        "price": 60,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3076",
+    "label": "Pesto Pasta",
+    "name": "Pesto Pasta",
+    "category": "pasta",
+    "price": 230,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3076",
+    "description": "Fresh basil pesto with pine nuts",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "basil",
+      "fresh"
+    ],
+    "customization": [
+      {
+        "id": "3076_c1",
+        "label": "Sun-dried Tomatoes",
+        "price": 40,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3077",
+    "label": "Ravioli",
+    "name": "Ravioli",
+    "category": "pasta",
+    "price": 265,
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop&seed=3077",
+    "description": "Cheese-filled ravioli with marinara",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "cheese",
+      "filled"
+    ],
+    "customization": [
+      {
+        "id": "3077_c1",
+        "label": "Truffle Oil",
+        "price": 55,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3078",
+    "label": "Pancakes",
+    "name": "Pancakes",
+    "category": "breakfast",
+    "price": 135,
+    "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop&seed=3078",
+    "description": "Fluffy pancakes with maple syrup",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "fluffy",
+      "breakfast"
+    ],
+    "customization": [
+      {
+        "id": "3078_c1",
+        "label": "Blueberries",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3079",
+    "label": "French Toast",
+    "name": "French Toast",
+    "category": "breakfast",
+    "price": 145,
+    "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop&seed=3079",
+    "description": "Golden French toast with cinnamon",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "golden",
+      "cinnamon"
+    ],
+    "customization": [
+      {
+        "id": "3079_c1",
+        "label": "Strawberries",
+        "price": 35,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3080",
+    "label": "Eggs Benedict",
+    "name": "Eggs Benedict",
+    "category": "breakfast",
+    "price": 165,
+    "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop&seed=3080",
+    "description": "Poached eggs with hollandaise sauce",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "poached",
+      "hollandaise"
+    ],
+    "customization": [
+      {
+        "id": "3080_c1",
+        "label": "Canadian Bacon",
+        "price": 45,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3081",
+    "label": "Omelette",
+    "name": "Omelette",
+    "category": "breakfast",
+    "price": 125,
+    "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop&seed=3081",
+    "description": "Three-egg omelette with cheese",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "eggs",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3081_c1",
+        "label": "Mushrooms",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3082",
+    "label": "Tomato Soup",
+    "name": "Tomato Soup",
+    "category": "soups",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop&seed=3082",
+    "description": "Creamy tomato soup with basil",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "basil"
+    ],
+    "customization": [
+      {
+        "id": "3082_c1",
+        "label": "Croutons",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3083",
+    "label": "Chicken Noodle Soup",
+    "name": "Chicken Noodle Soup",
+    "category": "soups",
+    "price": 115,
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop&seed=3083",
+    "description": "Classic comfort soup with tender chicken",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "comfort",
+      "chicken"
+    ],
+    "customization": [
+      {
+        "id": "3083_c1",
+        "label": "Extra Noodles",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3084",
+    "label": "Minestrone",
+    "name": "Minestrone",
+    "category": "soups",
+    "price": 105,
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop&seed=3084",
+    "description": "Italian vegetable soup with beans",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "vegetable",
+      "italian"
+    ],
+    "customization": [
+      {
+        "id": "3084_c1",
+        "label": "Parmesan",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3085",
+    "label": "Clam Chowder",
+    "name": "Clam Chowder",
+    "category": "soups",
+    "price": 135,
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop&seed=3085",
+    "description": "New England style creamy clam chowder",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "seafood"
+    ],
+    "customization": [
+      {
+        "id": "3085_c1",
+        "label": "Oyster Crackers",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3086",
+    "label": "Sweet Potato Fries",
+    "name": "Sweet Potato Fries",
+    "category": "sides",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&h=300&fit=crop&seed=3086",
+    "description": "Crispy sweet potato fries",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "sweet",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3086_c1",
+        "label": "Cinnamon Sugar",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3087",
+    "label": "Coleslaw",
+    "name": "Coleslaw",
+    "category": "sides",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&h=300&fit=crop&seed=3087",
+    "description": "Creamy cabbage coleslaw",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "creamy",
+      "fresh"
+    ],
+    "customization": []
+  },
+  {
+    "id": "3088",
+    "label": "Mac and Cheese",
+    "name": "Mac and Cheese",
+    "category": "sides",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&h=300&fit=crop&seed=3088",
+    "description": "Classic macaroni and cheese",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "comfort",
+      "cheese"
+    ],
+    "customization": [
+      {
+        "id": "3088_c1",
+        "label": "Bacon Bits",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3089",
+    "label": "Garlic Bread",
+    "name": "Garlic Bread",
+    "category": "sides",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=400&h=300&fit=crop&seed=3089",
+    "description": "Toasted bread with garlic butter",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "garlic",
+      "buttery"
+    ],
+    "customization": [
+      {
+        "id": "3089_c1",
+        "label": "Extra Garlic",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3090",
+    "label": "Steak Fajita",
+    "name": "Steak Fajita",
+    "category": "mexican",
+    "price": 245,
+    "image": "https://images.unsplash.com/photo-1565299585323-38174c925625?w=400&h=300&fit=crop&seed=3090",
+    "description": "Sizzling steak with peppers and onions",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "steak",
+      "sizzling"
+    ],
+    "customization": [
+      {
+        "id": "3090_c1",
+        "label": "Extra Peppers",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3091",
+    "label": "Chicken Fajita",
+    "name": "Chicken Fajita",
+    "category": "mexican",
+    "price": 215,
+    "image": "https://images.unsplash.com/photo-1565299585323-38174c925625?w=400&h=300&fit=crop&seed=3091",
+    "description": "Grilled chicken with vegetables",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "grilled"
+    ],
+    "customization": [
+      {
+        "id": "3091_c1",
+        "label": "Guacamole",
+        "price": 40,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3092",
+    "label": "Beef Burrito",
+    "name": "Beef Burrito",
+    "category": "mexican",
+    "price": 185,
+    "image": "https://images.unsplash.com/photo-1565299585323-38174c925625?w=400&h=300&fit=crop&seed=3092",
+    "description": "Large beef burrito with beans and rice",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "beef",
+      "filling"
+    ],
+    "customization": [
+      {
+        "id": "3092_c1",
+        "label": "Sour Cream",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3093",
+    "label": "Chicken Burrito",
+    "name": "Chicken Burrito",
+    "category": "mexican",
+    "price": 175,
+    "image": "https://images.unsplash.com/photo-1565299585323-38174c925625?w=400&h=300&fit=crop&seed=3093",
+    "description": "Grilled chicken burrito with fresh salsa",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "fresh"
+    ],
+    "customization": [
+      {
+        "id": "3093_c1",
+        "label": "Hot Sauce",
+        "price": 15,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3094",
+    "label": "Fish and Chips",
+    "name": "Fish and Chips",
+    "category": "mains",
+    "price": 195,
+    "image": "https://images.unsplash.com/photo-1544982503-9f984c14501a?w=400&h=300&fit=crop&seed=3094",
+    "description": "Beer-battered fish with crispy chips",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "fish",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3094_c1",
+        "label": "Mushy Peas",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3095",
+    "label": "BBQ Ribs",
+    "name": "BBQ Ribs",
+    "category": "mains",
+    "price": 285,
+    "image": "https://images.unsplash.com/photo-1544982503-9f984c14501a?w=400&h=300&fit=crop&seed=3095",
+    "description": "Tender BBQ ribs with smoky sauce",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "bbq",
+      "smoky"
+    ],
+    "customization": [
+      {
+        "id": "3095_c1",
+        "label": "Extra BBQ Sauce",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3096",
+    "label": "Grilled Salmon",
+    "name": "Grilled Salmon",
+    "category": "mains",
+    "price": 265,
+    "image": "https://images.unsplash.com/photo-1544982503-9f984c14501a?w=400&h=300&fit=crop&seed=3096",
+    "description": "Fresh grilled salmon with lemon",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "salmon",
+      "healthy"
+    ],
+    "customization": [
+      {
+        "id": "3096_c1",
+        "label": "Dill Sauce",
+        "price": 30,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3097",
+    "label": "Chicken Parmesan",
+    "name": "Chicken Parmesan",
+    "category": "mains",
+    "price": 235,
+    "image": "https://images.unsplash.com/photo-1544982503-9f984c14501a?w=400&h=300&fit=crop&seed=3097",
+    "description": "Breaded chicken with marinara and cheese",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "chicken",
+      "italian"
+    ],
+    "customization": [
+      {
+        "id": "3097_c1",
+        "label": "Extra Cheese",
+        "price": 35,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3098",
+    "label": "Stuffed Mushrooms",
+    "name": "Stuffed Mushrooms",
+    "category": "appetizers",
+    "price": 115,
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop&seed=3098",
+    "description": "Mushrooms stuffed with cheese and herbs",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "mushroom",
+      "stuffed"
+    ],
+    "customization": [
+      {
+        "id": "3098_c1",
+        "label": "Extra Herbs",
+        "price": 20,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3099",
+    "label": "Bruschetta",
+    "name": "Bruschetta",
+    "category": "appetizers",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop&seed=3099",
+    "description": "Toasted bread with fresh tomato and basil",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "fresh",
+      "italian"
+    ],
+    "customization": [
+      {
+        "id": "3099_c1",
+        "label": "Balsamic Glaze",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  },
+  {
+    "id": "3100",
+    "label": "Calamari Rings",
+    "name": "Calamari Rings",
+    "category": "appetizers",
+    "price": 145,
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop&seed=3100",
+    "description": "Crispy fried squid rings with marinara",
+    "isMainIngredient": true,
+    "isActive": true,
+    "tags": [
+      "seafood",
+      "crispy"
+    ],
+    "customization": [
+      {
+        "id": "3100_c1",
+        "label": "Spicy Mayo",
+        "price": 25,
+        "isMainIngredient": false
+      }
+    ]
+  }
+]

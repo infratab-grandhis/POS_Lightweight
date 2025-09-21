@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "productId": "3001",
+    "unit": "pieces",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "productId": "3002",
+    "unit": "pieces",
+    "available": 21,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "productId": "3003",
+    "unit": "pieces",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "productId": "3009",
+    "unit": "slices",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 60,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "productId": "3010",
+    "unit": "slices",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 60,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 6,
+    "productId": "3017",
+    "unit": "cups",
+    "available": 25,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 100,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 7,
+    "productId": "3018",
+    "unit": "cups",
+    "available": 25,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 100,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 8,
+    "productId": "3025",
+    "unit": "orders",
+    "available": 5,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "productId": "3026",
+    "unit": "orders",
+    "available": 5,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 10,
+    "productId": "3033",
+    "unit": "pieces",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 11,
+    "productId": "3004",
+    "unit": "pieces",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 12,
+    "productId": "3005",
+    "unit": "pieces",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 13,
+    "productId": "3006",
+    "unit": "pieces",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 14,
+    "productId": "3007",
+    "unit": "pieces",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 15,
+    "productId": "3008",
+    "unit": "pieces",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 16,
+    "productId": "3011",
+    "unit": "slices",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 17,
+    "productId": "3012",
+    "unit": "slices",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 18,
+    "productId": "3013",
+    "unit": "slices",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 19,
+    "productId": "3014",
+    "unit": "slices",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 45,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 20,
+    "productId": "3015",
+    "unit": "slices",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 21,
+    "productId": "3016",
+    "unit": "slices",
+    "available": 11,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 22,
+    "productId": "3019",
+    "unit": "cups",
+    "available": 30,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 80,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 23,
+    "productId": "3020",
+    "unit": "cups",
+    "available": 22,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 60,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 24,
+    "productId": "3021",
+    "unit": "cups",
+    "available": 28,
+    "reserved": 0,
+    "reorderLevel": 12,
+    "maxStock": 70,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 25,
+    "productId": "3022",
+    "unit": "cups",
+    "available": 35,
+    "reserved": 0,
+    "reorderLevel": 15,
+    "maxStock": 90,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 26,
+    "productId": "3023",
+    "unit": "cups",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 27,
+    "productId": "3024",
+    "unit": "cups",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 28,
+    "productId": "3027",
+    "unit": "orders",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 29,
+    "productId": "3028",
+    "unit": "orders",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 30,
+    "productId": "3029",
+    "unit": "orders",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 31,
+    "productId": "3030",
+    "unit": "orders",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 32,
+    "productId": "3031",
+    "unit": "orders",
+    "available": 25,
+    "reserved": 0,
+    "reorderLevel": 12,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 33,
+    "productId": "3032",
+    "unit": "orders",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 34,
+    "productId": "3034",
+    "unit": "pieces",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 35,
+    "productId": "3035",
+    "unit": "pieces",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 36,
+    "productId": "3036",
+    "unit": "pieces",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 37,
+    "productId": "3037",
+    "unit": "pieces",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 38,
+    "productId": "3038",
+    "unit": "servings",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 4,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 39,
+    "productId": "3039",
+    "unit": "servings",
+    "available": 6,
+    "reserved": 0,
+    "reorderLevel": 3,
+    "maxStock": 15,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 40,
+    "productId": "3040",
+    "unit": "servings",
+    "available": 25,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 41,
+    "productId": "3041",
+    "unit": "servings",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 42,
+    "productId": "3042",
+    "unit": "servings",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 43,
+    "productId": "3043",
+    "unit": "bowls",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 44,
+    "productId": "3044",
+    "unit": "bowls",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 45,
+    "productId": "3045",
+    "unit": "bowls",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 46,
+    "productId": "3046",
+    "unit": "bowls",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 47,
+    "productId": "3047",
+    "unit": "plates",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 48,
+    "productId": "3048",
+    "unit": "plates",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 49,
+    "productId": "3049",
+    "unit": "plates",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 4,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 50,
+    "productId": "3050",
+    "unit": "plates",
+    "available": 6,
+    "reserved": 0,
+    "reorderLevel": 3,
+    "maxStock": 15,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 51,
+    "productId": "3051",
+    "unit": "pieces",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 52,
+    "productId": "3052",
+    "unit": "pieces",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 53,
+    "productId": "3053",
+    "unit": "pieces",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 54,
+    "productId": "3054",
+    "unit": "slices",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 55,
+    "productId": "3055",
+    "unit": "slices",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 56,
+    "productId": "3056",
+    "unit": "slices",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 57,
+    "productId": "3057",
+    "unit": "cups",
+    "available": 25,
+    "reserved": 0,
+    "reorderLevel": 12,
+    "maxStock": 60,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 58,
+    "productId": "3058",
+    "unit": "cups",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 59,
+    "productId": "3059",
+    "unit": "cups",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 45,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 60,
+    "productId": "3060",
+    "unit": "cans",
+    "available": 24,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 60,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 61,
+    "productId": "3061",
+    "unit": "orders",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 62,
+    "productId": "3062",
+    "unit": "orders",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 63,
+    "productId": "3063",
+    "unit": "orders",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 4,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 64,
+    "productId": "3064",
+    "unit": "orders",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 65,
+    "productId": "3065",
+    "unit": "pieces",
+    "available": 9,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 22,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 66,
+    "productId": "3066",
+    "unit": "pieces",
+    "available": 11,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 67,
+    "productId": "3067",
+    "unit": "pieces",
+    "available": 13,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 28,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 68,
+    "productId": "3068",
+    "unit": "servings",
+    "available": 6,
+    "reserved": 0,
+    "reorderLevel": 3,
+    "maxStock": 15,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 69,
+    "productId": "3069",
+    "unit": "servings",
+    "available": 4,
+    "reserved": 0,
+    "reorderLevel": 2,
+    "maxStock": 12,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 70,
+    "productId": "3070",
+    "unit": "servings",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 45,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 71,
+    "productId": "3071",
+    "unit": "servings",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 4,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 72,
+    "productId": "3072",
+    "unit": "bowls",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 73,
+    "productId": "3073",
+    "unit": "bowls",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 74,
+    "productId": "3074",
+    "unit": "bowls",
+    "available": 11,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 28,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 75,
+    "productId": "3075",
+    "unit": "plates",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 76,
+    "productId": "3076",
+    "unit": "plates",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 77,
+    "productId": "3077",
+    "unit": "plates",
+    "available": 9,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 22,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 78,
+    "productId": "3078",
+    "unit": "stacks",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 79,
+    "productId": "3079",
+    "unit": "servings",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 9,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 80,
+    "productId": "3080",
+    "unit": "servings",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 81,
+    "productId": "3081",
+    "unit": "servings",
+    "available": 22,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 82,
+    "productId": "3082",
+    "unit": "bowls",
+    "available": 18,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 45,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 83,
+    "productId": "3083",
+    "unit": "bowls",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 84,
+    "productId": "3084",
+    "unit": "bowls",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 85,
+    "productId": "3085",
+    "unit": "bowls",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 86,
+    "productId": "3086",
+    "unit": "portions",
+    "available": 25,
+    "reserved": 0,
+    "reorderLevel": 12,
+    "maxStock": 60,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 87,
+    "productId": "3087",
+    "unit": "portions",
+    "available": 30,
+    "reserved": 0,
+    "reorderLevel": 15,
+    "maxStock": 70,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 88,
+    "productId": "3088",
+    "unit": "portions",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 89,
+    "productId": "3089",
+    "unit": "loaves",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 90,
+    "productId": "3090",
+    "unit": "plates",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 4,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 91,
+    "productId": "3091",
+    "unit": "plates",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 92,
+    "productId": "3092",
+    "unit": "pieces",
+    "available": 14,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 93,
+    "productId": "3093",
+    "unit": "pieces",
+    "available": 16,
+    "reserved": 0,
+    "reorderLevel": 8,
+    "maxStock": 40,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 94,
+    "productId": "3094",
+    "unit": "plates",
+    "available": 10,
+    "reserved": 0,
+    "reorderLevel": 5,
+    "maxStock": 25,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 95,
+    "productId": "3095",
+    "unit": "racks",
+    "available": 6,
+    "reserved": 0,
+    "reorderLevel": 3,
+    "maxStock": 15,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 96,
+    "productId": "3096",
+    "unit": "fillets",
+    "available": 8,
+    "reserved": 0,
+    "reorderLevel": 4,
+    "maxStock": 20,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 97,
+    "productId": "3097",
+    "unit": "servings",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 98,
+    "productId": "3098",
+    "unit": "orders",
+    "available": 15,
+    "reserved": 0,
+    "reorderLevel": 7,
+    "maxStock": 35,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 99,
+    "productId": "3099",
+    "unit": "orders",
+    "available": 20,
+    "reserved": 0,
+    "reorderLevel": 10,
+    "maxStock": 50,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  },
+  {
+    "id": 100,
+    "productId": "3100",
+    "unit": "orders",
+    "available": 12,
+    "reserved": 0,
+    "reorderLevel": 6,
+    "maxStock": 30,
+    "lastRestocked": "2024-09-21T06:00:00.000Z"
+  }
+]

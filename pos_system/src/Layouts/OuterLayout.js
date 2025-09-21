@@ -5,6 +5,7 @@ import './Layout.css';
 import Sidebar from '../Components/Sidebar';
 import CartBadge from '../Components/common/CartBadge';
 import NetworkStatus from '../Components/NetworkStatus';
+import pages from '../Pages/Constants';
  
 const OuterLayout = (props) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -23,7 +24,7 @@ const OuterLayout = (props) => {
     };
 
     const handleCartClick = () => {
-        navigate('/cart');
+        navigate(pages.cart);
     };
 
     return (

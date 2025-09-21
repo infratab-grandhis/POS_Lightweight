@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "burgers",
+    "displayName": "Burgers",
+    "description": "Delicious burgers"
+  },
+  {
+    "id": 2,
+    "name": "pizza",
+    "displayName": "Pizza",
+    "description": "Fresh pizza"
+  },
+  {
+    "id": 3,
+    "name": "beverages",
+    "displayName": "Beverages",
+    "description": "Refreshing drinks"
+  },
+  {
+    "id": 4,
+    "name": "snacks",
+    "displayName": "Snacks",
+    "description": "Quick snacks"
+  },
+  {
+    "id": 5,
+    "name": "sandwiches",
+    "displayName": "Sandwiches",
+    "description": "Fresh sandwiches"
+  },
+  {
+    "id": 6,
+    "name": "desserts",
+    "displayName": "Desserts",
+    "description": "Sweet treats"
+  },
+  {
+    "id": 7,
+    "name": "salads",
+    "displayName": "Salads",
+    "description": "Healthy salads"
+  },
+  {
+    "id": 8,
+    "name": "pasta",
+    "displayName": "Pasta",
+    "description": "Italian pasta dishes"
+  },
+  {
+    "id": 9,
+    "name": "breakfast",
+    "displayName": "Breakfast",
+    "description": "Morning breakfast items"
+  },
+  {
+    "id": 10,
+    "name": "soups",
+    "displayName": "Soups",
+    "description": "Hot and comforting soups"
+  },
+  {
+    "id": 11,
+    "name": "sides",
+    "displayName": "Sides",
+    "description": "Side dishes and accompaniments"
+  },
+  {
+    "id": 12,
+    "name": "mexican",
+    "displayName": "Mexican",
+    "description": "Authentic Mexican cuisine"
+  },
+  {
+    "id": 13,
+    "name": "mains",
+    "displayName": "Main Dishes",
+    "description": "Hearty main course meals"
+  },
+  {
+    "id": 14,
+    "name": "appetizers",
+    "displayName": "Appetizers",
+    "description": "Starters and appetizers"
+  }
+]

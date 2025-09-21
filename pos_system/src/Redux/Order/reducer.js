@@ -10,10 +10,19 @@ import {
     CLEAR_ORDER_HISTORY,
     UPDATE_INVENTORY,
     RESTORE_INVENTORY,
-    RESET_INVENTORY
+    RESET_INVENTORY,
+    UPDATE_ORDER_STATUS
 } from "./action";
+import { ORDER_STATUS } from '../../utils/orderStatusMachine';
+import { 
+    FETCH_INVENTORY_SUCCESS,
+    FETCH_ORDERS_START,
+    FETCH_ORDERS_SUCCESS,
+    FETCH_ORDERS_ERROR
+} from '../Product/actions';
 
-const orderReducer = (state = initialState, { type, payload }) => {
+const orderReducer = (state = initialState, action) => {
+    const { type, payload } = action;
     switch (type) {
         case ADD_TO_CART:
             return {
@@ -132,6 +141,59 @@ const orderReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 inventory: [...payload] // Replace entire inventory with fresh data
+            };
+
+        case UPDATE_ORDER_STATUS:
+            return {
+                ...state,
+                orderHistory: state.orderHistory.map(order => {
+                    if (order.id === payload.orderId) {
+                        return {
+                            ...order,
+                            status: payload.newStatus,
+                            estimatedCompletion: payload.estimatedCompletion,
+                            lastUpdated: payload.timestamp,
+                            statusHistory: [
+                                ...(order.statusHistory || []),
+                                {
+                                    status: payload.newStatus,
+                                    timestamp: payload.timestamp,
+                                    updatedBy: payload.updatedBy,
+                                    notes: payload.notes
+                                }
+                            ]
+                        };
+                    }
+                    return order;
+                })
+            };
+
+        case FETCH_INVENTORY_SUCCESS:
+            return {
+                ...state,
+                inventory: payload
+            };
+
+        case FETCH_ORDERS_START:
+            return {
+                ...state,
+                ordersLoading: true,
+                ordersError: null
+            };
+
+        case FETCH_ORDERS_SUCCESS:
+            return {
+                ...state,
+                ordersLoading: false,
+                ordersError: null,
+                orderHistory: payload // Update order history from API
+            };
+
+        case FETCH_ORDERS_ERROR:
+            return {
+                ...state,
+                ordersLoading: false,
+                ordersError: payload
             };
 
         default:

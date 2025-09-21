@@ -1,3 +1,6 @@
+import { ORDER_STATUSES, validateStatusTransition, calculateEstimatedCompletion } from '../../utils/orderStatusMachine';
+import ApiService from '../../services/api';
+
 // Cart Actions
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
@@ -9,6 +12,10 @@ export const REMOVE_CUSTOMIZATION = 'REMOVE_CUSTOMIZATION';
 // Order History Actions
 export const ADD_TO_ORDER_HISTORY = 'ADD_TO_ORDER_HISTORY';
 export const CLEAR_ORDER_HISTORY = 'CLEAR_ORDER_HISTORY';
+
+// Order Status Actions
+export const UPDATE_ORDER_STATUS = 'UPDATE_ORDER_STATUS';
+export const ADD_ORDER_STATUS_HISTORY = 'ADD_ORDER_STATUS_HISTORY';
 
 // Inventory Actions
 export const UPDATE_INVENTORY = 'UPDATE_INVENTORY';
@@ -111,6 +118,60 @@ export const addToOrderHistory = (cartItems, totalAmount, paymentMethod = 'Card'
     }
 });
 
+// Enhanced order creation with API call to save to json-server
+export const createOrder = (cartItems, totalAmount, paymentMethod = 'Card', customerInfo = {}) => {
+    return async (dispatch) => {
+        const orderData = {
+            id: `order_${Date.now()}`,
+            orderId: `ORD-${Date.now()}`,
+            items: cartItems.map(item => ({...item})), // Deep copy
+            totalAmount: totalAmount,
+            paymentMethod: paymentMethod,
+            status: ORDER_STATUSES.PREPARING, // Start with preparing status after checkout
+            orderDate: new Date().toISOString(),
+            orderTime: new Date().toLocaleTimeString(),
+            customerInfo: {
+                type: 'Walk-in',
+                orderType: 'Dine-in',
+                ...customerInfo
+            },
+            statusHistory: [{
+                status: ORDER_STATUSES.PREPARING,
+                timestamp: new Date().toISOString(),
+                updatedBy: 'cashier',
+                notes: 'Order placed and sent to kitchen'
+            }],
+            estimatedCompletion: calculateEstimatedCompletion(ORDER_STATUSES.PREPARING, new Date().toISOString()),
+            lastUpdated: new Date().toISOString()
+        };
+
+        try {
+            // Save order to API/json-server
+            const result = await ApiService.createOrder(orderData);
+            
+            if (result.success) {
+                // Add to local Redux state
+                dispatch({
+                    type: ADD_TO_ORDER_HISTORY,
+                    payload: orderData
+                });
+            } else {
+                // Still add to local state as fallback
+                dispatch({
+                    type: ADD_TO_ORDER_HISTORY,
+                    payload: orderData
+                });
+            }
+        } catch (error) {
+            // Still add to local state as fallback
+            dispatch({
+                type: ADD_TO_ORDER_HISTORY,
+                payload: orderData
+            });
+        }
+    };
+};
+
 export const clearOrderHistory = () => ({
     type: CLEAR_ORDER_HISTORY
 });
@@ -124,3 +185,60 @@ export const processCheckout = (cartItems, totalAmount, paymentMethod = 'Card') 
         dispatch(clearCart());
     };
 };
+
+// Enhanced Checkout Action with Status Tracking
+export const processCheckoutWithStatus = (cartItems, totalAmount, paymentMethod = 'Card', customerInfo = {}) => {
+    return async (dispatch) => {
+        try {
+            // Create order with API call
+            await dispatch(createOrder(cartItems, totalAmount, paymentMethod, customerInfo));
+            // Clear cart after successful order creation
+            dispatch(clearCart());
+        } catch (error) {
+            // Still clear cart even if API call failed (order saved locally)
+            dispatch(clearCart());
+        }
+    };
+};
+
+// Order Status Management Actions
+export const updateOrderStatus = (orderId, newStatus, notes = '', updatedBy = 'system') => {
+    return (dispatch, getState) => {
+        const state = getState();
+        const order = state.orderReducer.orderHistory.find(o => o.id === orderId);
+        
+        if (!order) {
+            throw new Error(`Order ${orderId} not found`);
+        }
+        
+        // Validate transition
+        if (!validateStatusTransition(order.status, newStatus)) {
+            throw new Error(`Invalid status transition: ${order.status} → ${newStatus}`);
+        }
+        
+        dispatch({
+            type: UPDATE_ORDER_STATUS,
+            payload: {
+                orderId,
+                newStatus,
+                timestamp: new Date().toISOString(),
+                updatedBy,
+                notes,
+                estimatedCompletion: calculateEstimatedCompletion(newStatus, order.orderDate)
+            }
+        });
+    };
+};
+
+// Convenience actions for common transitions
+export const startPreparingOrder = (orderId, notes = '') => 
+    updateOrderStatus(orderId, ORDER_STATUSES.PREPARING, notes, 'kitchen');
+
+export const markOrderReady = (orderId, notes = '') => 
+    updateOrderStatus(orderId, ORDER_STATUSES.READY, notes, 'kitchen');
+
+export const completeOrder = (orderId, notes = '') => 
+    updateOrderStatus(orderId, ORDER_STATUSES.COMPLETED, notes, 'cashier');
+
+export const cancelOrder = (orderId, reason = '') => 
+    updateOrderStatus(orderId, ORDER_STATUSES.CANCELLED, reason, 'manager');

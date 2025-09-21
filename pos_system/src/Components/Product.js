@@ -24,7 +24,7 @@ const LazyImage = ({ src, alt, className, placeholder }) => {
                                 setImageSrc(src);
                             };
                             img.onerror = () => {
-                                setImageSrc('https://via.placeholder.com/400x300/f0f0f0/999999?text=Image+Error');
+                                setImageSrc('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIEVycm9yPC90ZXh0Pjwvc3ZnPg==');
                             };
                             img.src = src;
                             observer.unobserve(imageRef);
@@ -135,7 +135,7 @@ const Product = ({ product }) => {
                     src={product?.image} 
                     alt={product?.name || product?.label} 
                     className="product-image"
-                    placeholder="https://via.placeholder.com/400x300/f0f0f0/999999?text=Loading..."
+                    placeholder="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxvYWRpbmcuLi48L3RleHQ+PC9zdmc+"
                 />
                 
                 {/* Inventory Status Badge */}
@@ -212,7 +212,5 @@ const Product = ({ product }) => {
         </section>
     );
 }
-
-Product.propTypes = {};
 
 export default Product;

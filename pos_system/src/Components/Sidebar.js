@@ -4,11 +4,14 @@ import { useSelector } from 'react-redux';
 import './Sidebar.css';
 import pages from '../Pages/Constants.js';
 import CartBadge from './common/CartBadge';
+import { getActiveOrders } from '../utils/orderStatusMachine';
 
 const Sidebar = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
     const cartItems = useSelector(state => state.orderReducer.cart);
+    const orderHistory = useSelector(state => state.orderReducer.orderHistory);
     const cartCount = cartItems.length;
+    const activeOrdersCount = getActiveOrders(orderHistory).length;
 
     const handleNavigation = (path) => {
         navigate(path);
@@ -53,6 +56,15 @@ const Sidebar = ({ isOpen, onClose }) => {
                         onClick={() => handleNavigation(pages.orderHistory)}
                     >
                         📋 Order History
+                    </button>
+                    <button
+                        className="sidebar-item"
+                        onClick={() => handleNavigation(pages.kitchen)}
+                    >
+                        <span className="cart-item-wrapper">
+                            🍳 Kitchen Display
+                            <CartBadge count={activeOrdersCount} size="small" className="sidebar-badge" />
+                        </span>
                     </button>
                 </nav>
             </div>

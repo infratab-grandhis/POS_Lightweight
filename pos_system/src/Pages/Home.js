@@ -28,6 +28,10 @@ const Home = () => {
         navigate(pages.orderHistory);
     };
 
+    const navigateToKitchen = () => {
+        navigate(pages.kitchen);
+    };
+
     return (
         <OuterLayout>
             <div className="home-container">
@@ -126,6 +130,16 @@ const Home = () => {
                                         : 'No orders yet'
                                     }
                                 </p>
+                            </div>
+                            <div className="action-arrow">→</div>
+                        </div>
+
+                        {/* Kitchen Display Card */}
+                        <div className="action-card" onClick={navigateToKitchen}>
+                            <div className="action-icon">🍳</div>
+                            <div className="action-content">
+                                <h3>Kitchen Display</h3>
+                                <p>Manage orders, update status, and track preparation progress</p>
                             </div>
                             <div className="action-arrow">→</div>
                         </div>

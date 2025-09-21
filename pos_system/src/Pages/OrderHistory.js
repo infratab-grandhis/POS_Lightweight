@@ -7,9 +7,11 @@ import Button from '../Components/common/Button';
 import EmptyState from '../Components/common/EmptyState';
 import PriceDisplay from '../Components/common/PriceDisplay';
 import PrintableReceipt from '../Components/PrintableReceipt';
+import OrderStatusBadge from '../Components/OrderStatus/OrderStatusBadge';
 import { clearOrderHistory } from '../Redux/Order/action';
 import { showSuccessNotification, showErrorNotification } from '../Redux/Notification/actions';
 import './OrderHistory.css';
+import pages from './Constants'
 
 const OrderHistory = () => {
     const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const OrderHistory = () => {
     };
 
     const handleBackToProducts = () => {
-        navigate('/products');
+        navigate(pages.products);
     };
 
     // Print functionality
@@ -127,9 +129,7 @@ const OrderHistory = () => {
                                     <div className="order-meta">
                                         <span className="order-date">{formatDate(order.orderDate)}</span>
                                         <span className="order-time">{order.orderTime}</span>
-                                        <span className={`order-status status-${order.status.toLowerCase()}`}>
-                                            {order.status}
-                                        </span>
+                                        <OrderStatusBadge status={order.status} size="small" />
                                     </div>
                                 </div>
                                 <div className="order-total">

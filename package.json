@@ -1,0 +1,23 @@
+{
+  "name": "pos-lightweight",
+  "version": "1.0.0",
+  "description": "Lightweight POS System with JSON Server Backend",
+  "scripts": {
+    "start": "concurrently \"npm run start:api\" \"npm run start:frontend\"",
+    "start:api": "npm run build:db && json-server --watch api-data/db.json --routes api-data/routes.json --port 5000 --host localhost",
+    "start:frontend": "cd pos_system && npm start",
+    "build:db": "node api-data/build-db.js",
+    "dev:api": "npm run build:db && json-server --watch api-data/db.json --routes api-data/routes.json --port 5000",
+    "watch:db": "nodemon --watch api-data/separate --exec \"npm run build:db\"",
+    "dev": "concurrently \"npm run watch:db\" \"npm run dev:api\" \"npm run start:frontend\"",
+    "build": "cd pos_system && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

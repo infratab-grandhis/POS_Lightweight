@@ -1,327 +1,394 @@
-# 🍔 Food Truck POS System
+# 🍔 POS Lightweight System
 
-A modern, lightweight Point of Sale (POS) system built with React, designed specifically for food trucks and small restaurants. Features real-time inventory management, cart functionality, order history, and receipt printing.
+A modern, lightweight Point of Sale (POS) system built with React and Redux, designed for restaurants and retail businesses. Features a complete API backend with json-server, real-time kitchen management, and responsive design.
 
 ## 🚀 Features
 
-### 🎯 Core Functionality
-- **Product Catalog**: Browse food items with images and pricing
+### 🛒 **Core POS Functionality**
+- **Product Catalog**: Browse 100+ products with categories and search
 - **Smart Cart**: Add/remove items with real-time quantity management
-- **Inventory Tracking**: Live stock monitoring with low-stock alerts
-- **Order Processing**: Complete checkout flow with order confirmation
-- **Receipt Printing**: Professional thermal receipt printing
-- **Order History**: View and track past orders
-- **Search & Filter**: Find products quickly with search functionality
+- **Order Processing**: Complete checkout flow with payment methods
+- **Order History**: View and manage past orders with status tracking
+- **Inventory Management**: Real-time stock tracking and low-stock alerts
+- **Receipt Printing**: Professional thermal receipt printing with React-to-print
 
-### 🔧 Technical Features
-- **React 18**: Latest React with hooks and modern patterns
-- **Redux Toolkit**: Efficient state management with notification system
-- **Modern UI**: Toast notifications and confirmation dialogs
-- **Responsive Design**: Mobile-first design that works on all devices
+### 🍳 **Kitchen Management System**
+- **Kitchen Display**: Kanban-style order management (Preparing → Ready → Delivered)
+- **Status Transitions**: Move orders through workflow with API updates
+- **Real-time Updates**: 30-second polling for live order status
+- **Order History Tracking**: Complete audit trail of status changes
+- **Manual Refresh**: On-demand order updates
+- **Responsive Kitchen UI**: Optimized for tablets and mobile devices
+
+### 📱 **Responsive Design**
+- **Mobile-First**: Optimized for phones, tablets, and desktops
+- **Touch-Friendly**: Large buttons and intuitive gestures
+- **Adaptive Layout**: Kitchen display adapts to screen size
 - **PWA Ready**: Progressive Web App capabilities
-- **Performance Optimized**: Lazy loading, code splitting, and optimized bundle
-- **Accessibility**: WCAG compliant with keyboard navigation and screen readers
-- **Print Integration**: React-to-print for receipt generation
+- **Offline Support**: Service worker for offline functionality
 
-### 📱 Device Support
-- **Mobile**: Optimized for tablet and phone POS systems
-- **Landscape/Portrait**: Adaptive layouts for both orientations
-- **Touch-Friendly**: Large buttons and touch targets
-- **Offline Capable**: Basic functionality works offline
+### 🔧 **Technical Features**
+- **API Integration**: Full REST API with json-server backend
+- **Lazy Loading**: Intersection Observer for infinite scroll (30 items/page)
+- **State Management**: Redux with Redux Persist
+- **Real-time Sync**: API polling and manual refresh options
+- **Error Handling**: Comprehensive error states and notifications
+- **Modern UI**: Toast notifications and confirmation dialogs
 
-## 🏗️ Installation & Setup
+## 🛠 Tech Stack
+
+### **Frontend**
+- **React 18** - Modern React with hooks and latest patterns
+- **Redux Toolkit** - Efficient state management with notification system
+- **React Router** - Client-side routing with constants
+- **Redux Persist** - State persistence across sessions
+
+### **Backend**
+- **json-server** - Mock REST API with full CRUD operations
+- **Node.js** - Build scripts and development tooling
+- **Concurrently** - Run multiple processes simultaneously
+
+### **Development**
+- **Create React App** - Build tooling and optimization
+- **ESLint** - Code linting and quality assurance
+- **Service Worker** - PWA capabilities and offline support
+- **Nodemon** - Auto-restart development server
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 16.x or higher
-- npm 7.x or higher
+
+- Node.js (v16 or higher)
+- npm or yarn
 
 ### Quick Start
+
+1. **Clone the repository:**
 ```bash
-# Clone the repository
 git clone <repository-url>
-cd pos_system
-
-# Install dependencies
-npm install
-
-# Build for production (REQUIRED FIRST STEP)
-npm run build
-
-# Start the application
-npm start
+cd POS_Lightweight
 ```
 
-**⚠️ Important**: Always run `npm run build` before `npm start` to ensure you have the latest optimized build.
+2. **Install dependencies:**
+```bash
+npm install
+```
 
-## 📦 Build Information
+3. **Start the complete system:**
+```bash
+npm run dev
+```
 
-### Bundle Size (Gzipped)
-- **JavaScript**: ~80.93 kB (includes notification system)
-- **CSS**: ~8.75 kB (includes notification styling)
-- **Total Bundle**: ~89.68 kB (Still under 90kB!)
+This starts:
+- **API Server** on http://localhost:5000
+- **React App** on http://localhost:3000
+- **Auto-rebuild** of database on file changes
 
-### Performance Optimizations
-- Code splitting for reduced initial load
-- Lazy loading for images and components
-- CSS minification and optimization
-- Tree shaking for unused code removal
-- Gzip compression for production builds
-
-## 🛠️ Scripts
+### Alternative Start Methods
 
 ```bash
-# Development server
-npm start                 # Runs on http://localhost:3000
+# Start only the frontend
+cd pos_system && npm start
 
-# Production build
-npm run build            # Creates optimized build in /build folder
+# Start only the API server
+npm run start:api
 
-# Testing
-npm test                 # Runs test suite
-
-# Bundle analysis
-npm run build && npx serve -s build   # Serve production build locally
+# Build database manually
+npm run build:db
 ```
 
-## 🔄 Workflows & User Journey
-
-### 1. Product Browsing
-- **Entry Point**: Home page with product grid
-- **Actions**: Browse, search, filter products
-- **Features**: Stock indicators, pricing display, product images
-
-### 2. Cart Management
-- **Add Items**: Click products to add to cart with customizations
-- **Quantity Control**: Adjust quantities with stock validation
-- **Real-time Updates**: Cart totals update automatically
-- **Stock Validation**: Prevents adding out-of-stock items
-
-### 3. Checkout Process
-- **Review Cart**: Verify items and quantities
-- **Total Calculation**: Automatic tax and total computation
-- **Order Confirmation**: Confirm order details
-- **Receipt Options**: Print or save receipt
-
-### 4. Order Management
-- **Order History**: View all past orders
-- **Receipt Reprinting**: Access previous receipts
-- **Order Search**: Find specific orders quickly
-
-### 5. Inventory Management
-- **Real-time Stock**: Live inventory tracking
-- **Low Stock Alerts**: Visual indicators for low stock
-- **Stock Validation**: Prevents overselling
-- **Automatic Updates**: Stock reduces on successful orders
-
-## 📋 File Structure
+## 📁 Project Structure
 
 ```
-pos_system/
-├── public/
-│   ├── index.html
-│   ├── manifest.json          # PWA manifest
-│   └── favicon.ico
-├── src/
-│   ├── Components/            # Reusable components
-│   │   ├── common/           # Shared UI components
-│   │   ├── PrintableReceipt.js
-│   │   ├── NetworkStatus.js
-│   │   └── SearchFilter.js
-│   ├── Pages/                # Main page components
-│   │   ├── Products.js       # Product catalog
-│   │   ├── Cart.js          # Shopping cart
-│   │   └── OrderHistory.js  # Order management
-│   ├── Redux/               # State management
-│   │   ├── Product/         # Product state
-│   │   ├── Order/           # Cart & order state
-│   │   └── store.js         # Redux store config
-│   ├── Layouts/             # Layout components
-│   └── utils/               # Utility functions
-├── package.json
-└── README.md
+POS_Lightweight/
+├── pos_system/                 # React Frontend
+│   ├── src/
+│   │   ├── Components/         # Reusable UI components
+│   │   │   ├── common/         # Shared components (Button, CartBadge, etc.)
+│   │   │   ├── Notification/   # Toast notification system
+│   │   │   └── OrderStatus/    # Order status components
+│   │   ├── Pages/              # Main application pages
+│   │   │   ├── Home.js         # Dashboard with navigation
+│   │   │   ├── Products.js     # Product catalog with lazy loading
+│   │   │   ├── Cart.js         # Shopping cart with checkout
+│   │   │   ├── OrderHistory.js # Order management and printing
+│   │   │   ├── KitchenDisplay.js # Kitchen workflow management
+│   │   │   └── Constants.js    # Route constants
+│   │   ├── Redux/              # State management
+│   │   │   ├── Product/        # Product & inventory state
+│   │   │   ├── Order/          # Cart & order state
+│   │   │   └── Notification/   # Notification state
+│   │   ├── services/           # API integration
+│   │   │   └── api.js          # REST API service with json-server
+│   │   ├── utils/              # Utility functions
+│   │   │   └── orderStatusMachine.js # Order workflow logic
+│   │   └── Layouts/            # Layout components
+│   └── public/
+│       └── sw.js               # Service worker (v2)
+├── api-data/                   # Backend Data
+│   ├── separate/               # Decoupled JSON files
+│   │   ├── products.json       # 100 products with categories
+│   │   ├── inventory.json      # Real-time stock data
+│   │   ├── categories.json     # Product categories
+│   │   └── orders.json         # Order history with status
+│   ├── build-db.js            # Database builder script
+│   ├── routes.json            # API route mappings
+│   └── db.json                # Generated database (auto-built)
+└── package.json               # Root dependencies and scripts
 ```
 
-## 🎨 Styling & Theming
+## 🔄 API Endpoints
 
-### CSS Architecture
-- **CSS Custom Properties**: Consistent theming with CSS variables
-- **Mobile-First**: Responsive design starting from mobile
-- **Component-Scoped**: CSS modules for component isolation
-- **Utility Classes**: Common utilities for spacing, colors, etc.
+### **Products**
+- `GET /api/products` - Get products with pagination
+- `GET /api/products?_page=1&_limit=30` - Paginated products
+- `GET /api/products?q=search` - Search products
+- `GET /api/products?category=beverages` - Filter by category
 
-### Color Palette
-- **Primary**: #007bff (Blue)
-- **Success**: #28a745 (Green)
-- **Warning**: #ffc107 (Yellow)
-- **Danger**: #dc3545 (Red)
-- **Light**: #f8f9fa (Light Gray)
+### **Inventory**
+- `GET /api/inventory` - Get all inventory
+- `GET /api/inventory?productId=123` - Get inventory by product
+- `PATCH /api/inventory/:id` - Update stock levels
 
-### Responsive Breakpoints
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-- **Landscape**: Specific orientation handling
+### **Orders**
+- `GET /api/orders` - Get all orders
+- `POST /api/orders` - Create new order
+- `PATCH /api/orders/:id` - Update order status with history
 
-## 🔧 Configuration
+### **Categories**
+- `GET /api/categories` - Get all categories
 
-### Environment Variables
-Create a `.env` file in the root directory:
+## 🍳 Kitchen Workflow
 
-```env
-REACT_APP_VERSION=$npm_package_version
-REACT_APP_NAME="Food Truck POS"
+### **Order Status Flow**
+```
+PREPARING → READY → DELIVERED
+     ↓
+  CANCELLED
 ```
 
-### Print Settings
-The application supports thermal receipt printing with:
-- 80mm paper width
-- Customizable receipt format
-- Logo and business information
-- Order details and totals
+### **Kitchen Display Features**
+- **4-Column Kanban Layout**: Preparing | Ready | Delivered | Cancelled
+- **Status Transition Buttons**: Move orders between states with API updates
+- **Real-time Updates**: Auto-refresh every 30 seconds with proper cleanup
+- **Manual Refresh**: On-demand updates with loading states
+- **Order Details**: Items, prices, timestamps, and customer info
+- **Status History**: Complete audit trail of all status changes
+- **Responsive Design**: Adapts to tablets and mobile devices
+
+### **Kitchen Management**
+- **Order Cards**: Compact view with essential information
+- **Time Tracking**: Shows order time and elapsed time
+- **Item Summary**: First 2 items with "more" indicator
+- **Action Buttons**: Context-aware status transition buttons
+- **Empty States**: Friendly messages when no orders in each status
+
+## 📱 Responsive Features
+
+### **Mobile (< 768px)**
+- **Vertical Layout**: Columns stack vertically with scroll
+- **Horizontal Scroll**: Orders scroll within columns
+- **Compact Cards**: Smaller fonts and spacing
+- **Touch Buttons**: Larger touch targets
+- **Simplified Text**: Shorter button labels
+
+### **Desktop/Tablet**
+- **4-Column Layout**: Side-by-side columns
+- **Full Details**: Complete order information
+- **Hover Effects**: Interactive feedback
+- **Keyboard Navigation**: Full accessibility support
+
+## 🔧 Development Scripts
+
+```bash
+# Complete development environment
+npm run dev                 # Start API + Frontend + Auto-rebuild
+
+# Individual services
+npm run start:api          # Start json-server only
+npm run start:frontend     # Start React app only
+npm run build:db           # Build database from separate files
+
+# Database management
+npm run watch:db           # Watch for changes and rebuild
+npm run dev:api            # API server with auto-rebuild
+
+# Production
+npm run build              # Build React app for production
+```
+
+## 🗄️ Database Architecture
+
+### **Decoupled Structure**
+- **Separate JSON files** for each data type
+- **Auto-build system** combines files into single database
+- **Version control friendly** - smaller, focused files
+- **Team collaboration** - multiple developers can work on different data
+
+### **Data Management**
+```bash
+# Edit data in separate files
+api-data/separate/products.json    # Add/edit products
+api-data/separate/inventory.json   # Manage stock levels
+api-data/separate/orders.json      # Order history
+
+# Database auto-rebuilds on changes
+npm run dev  # Watches for changes and rebuilds db.json
+```
+
+### **Sample Data**
+- **100 Products** across 14 categories
+- **Real inventory** with stock levels
+- **Order samples** with complete status history
+- **Categories** with proper relationships
+
+## 🎯 Performance Optimizations
+
+### **Bundle Size (Gzipped)**
+- **JavaScript**: ~80.93 kB (includes all features)
+- **CSS**: ~8.75 kB (responsive design)
+- **Total Bundle**: ~89.68 kB (Under 90kB!)
+
+### **Loading Optimizations**
+- **Lazy Loading**: Products load 30 at a time with Intersection Observer
+- **Code Splitting**: Route-based code splitting
+- **Image Optimization**: Lazy loading with placeholder states
+- **API Caching**: Smart caching with service worker v2
+
+### **Performance Features**
+- **Infinite Scroll**: Smooth product loading
+- **Debounced Search**: Optimized search performance
+- **Memoized Components**: Prevent unnecessary re-renders
+- **Efficient State Updates**: Optimized Redux actions
+
+## 🔍 Troubleshooting
+
+### **Common Issues**
+
+1. **App keeps reloading after refresh**
+   - **Solution**: Service worker cache updated to v2
+   - Clear browser cache or hard refresh (Ctrl+Shift+R)
+
+2. **API calls failing**
+   - Ensure json-server is running on port 5000
+   - Check if `db.json` exists and is valid
+   - Verify network tab for failed requests
+
+3. **Kitchen Display not updating**
+   - Check if orders exist in database
+   - Use manual refresh button
+   - Verify API endpoints are responding
+
+4. **Products not loading with lazy loading**
+   - Check if products.json has data
+   - Verify Intersection Observer is working
+   - Check browser console for errors
+
+5. **Multiple tabs causing issues**
+   - Polling is properly cleaned up on unmount
+   - Each tab manages its own intervals
+   - Service worker cache prevents conflicts
 
 ## 🧪 Testing
 
+### **Manual Testing Workflows**
+
+1. **Product Browsing**
+   - Load products page → Verify 30 products load
+   - Scroll to bottom → More products load automatically
+   - Search for items → Results filter correctly
+
+2. **Cart Management**
+   - Add items to cart → Cart badge updates
+   - Modify quantities → Totals recalculate
+   - Remove items → Cart updates correctly
+
+3. **Order Processing**
+   - Complete checkout → Order created with PREPARING status
+   - Check Kitchen Display → Order appears in Preparing column
+   - Move order through statuses → API updates correctly
+
+4. **Kitchen Workflow**
+   - Open Kitchen Display → Orders load in correct columns
+   - Click status buttons → Orders move between columns
+   - Refresh manually → Latest data loads
+
+### **Offline Testing**
 ```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode
-npm test -- --watch
-
-# Generate coverage report
-npm test -- --coverage
-```
-
-## 📈 Performance Monitoring
-
-### Lighthouse Scores (Target)
-- **Performance**: 90+
-- **Accessibility**: 95+
-- **Best Practices**: 90+
-- **SEO**: 85+
-
-### Bundle Analysis
-```bash
-# Analyze bundle size
-npm run build
-npx bundlephobia
-
-# Visual bundle analyzer
-npm install --save-dev webpack-bundle-analyzer
-npx webpack-bundle-analyzer build/static/js/*.js
+1. Load app online → Cache files
+2. Go offline → App still works
+3. Add items to cart → Functions offline
+4. Complete checkout → Order queued
+5. Go online → Data syncs
 ```
 
 ## 🚀 Deployment
 
-### Production Build
+### **Production Build**
 ```bash
-# Create optimized build
-npm run build
-
-# Serve locally for testing
-npx serve -s build
+npm run build              # Build React app
+npm run build:db           # Build final database
 ```
 
-### Hosting Options
+### **Hosting Options**
 - **Static Hosting**: Netlify, Vercel, GitHub Pages
-- **Traditional Server**: Apache, Nginx
-- **CDN**: CloudFront, CloudFlare
+- **Traditional Server**: Apache, Nginx with API proxy
+- **Full Stack**: Deploy json-server alongside React app
 
-### Pre-deployment Checklist
-- [ ] Run `npm run build` successfully
-- [ ] Test all major workflows
-- [ ] Verify responsive design
-- [ ] Test print functionality
-- [ ] Check performance scores
-- [ ] Validate accessibility
-- [ ] Test offline functionality
+### **Environment Configuration**
+- **API Base URL**: Configure in `services/api.js`
+- **Service Worker**: Update cache version for deployments
+- **Database**: Ensure `db.json` is built and accessible
 
-## 🔌 Offline Testing Guide
+## 🎨 UI/UX Features
 
-### Quick Offline Test (5 minutes)
-```bash
-1. Open app online → Verify functionality
-2. DevTools → Network Tab → Check "Offline"
-3. Refresh page (Ctrl+R) → Should still load
-4. Add items to cart → Should work
-5. Complete checkout → Should process
-6. Go back online → Verify data intact
-```
+### **Design System**
+- **Consistent Colors**: Primary blue, success green, warning yellow
+- **Typography**: Responsive font sizes and weights
+- **Spacing**: Consistent padding and margins
+- **Icons**: Emoji-based icons for universal recognition
 
-### Comprehensive Offline Testing
-1. **Service Worker Setup**
-   - Load app online first (caches files automatically)
-   - Check Console for "Service Worker registered" message
-   - Verify in DevTools → Application → Service Workers
+### **Accessibility**
+- **Keyboard Navigation**: Full keyboard support
+- **Screen Reader**: ARIA labels and semantic HTML
+- **Color Contrast**: WCAG compliant color combinations
+- **Touch Targets**: Minimum 44px touch targets
 
-2. **Core Offline Functions**
-   - ✅ Browse products (from cached data)
-   - ✅ Search and filter (local processing)
-   - ✅ Add/remove cart items
-   - ✅ Checkout and order completion
-   - ✅ View order history
-   - ✅ Print receipts
-
-3. **Data Persistence**
-   - Cart items survive browser refresh
-   - Order history persists across sessions
-   - Network status indicator updates correctly
-
-4. **Troubleshooting**
-   - If "No Internet" appears: Service worker needs to cache files online first
-   - Clear browser cache: DevTools → Application → Clear Storage
-   - Force refresh: Ctrl+Shift+R to bypass cache
-
-### Mobile PWA Testing
-```bash
-1. Open app in mobile browser
-2. "Add to Home Screen" option appears
-3. Install as PWA
-4. Turn on Airplane Mode
-5. Open PWA → Should work offline
-```
+### **User Experience**
+- **Loading States**: Spinners and skeleton screens
+- **Error Handling**: Friendly error messages
+- **Empty States**: Helpful guidance when no data
+- **Confirmation Dialogs**: Prevent accidental actions
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make changes with tests
-4. Run build and tests
-5. Submit pull request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 Changelog
+### **Development Guidelines**
+- Use route constants from `Constants.js`
+- Follow existing component patterns
+- Add proper error handling
+- Test responsive design
+- Update documentation
 
-### v0.1.0 (Current)
-- Initial release with core POS functionality
-- Product catalog and cart management
-- Order processing and receipt printing
-- **Modern notification system** with toast notifications
-- **Accessible UI** with confirmation dialogs
-- Responsive design and mobile optimization
-- Performance optimizations and bundle size reduction
-- Production-ready code with comprehensive documentation
+## 📄 License
 
-## 🆘 Troubleshooting
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Common Issues
+## 🎯 Future Enhancements
 
-**Build Fails**:
-```bash
-# Clear cache and reinstall
-rm -rf node_modules package-lock.json
-npm install
-npm run build
-```
-
-**Print Not Working**:
-- Ensure browser supports print API
-- Check printer connectivity
-- Verify receipt component renders correctly
-
-**Bundle Too Large**:
-- Check for unused dependencies
-- Analyze bundle with webpack-bundle-analyzer
-- Consider code splitting for large routes
+- **WebSocket Integration** - Real-time updates without polling
+- **Payment Gateway** - Stripe/PayPal integration
+- **Advanced Analytics** - Sales reports and insights
+- **Multi-location Support** - Multiple restaurant locations
+- **User Authentication** - Role-based access control
+- **Thermal Printer Integration** - Direct printer support
+- **Voice Commands** - Hands-free operation
+- **Barcode Scanning** - Product scanning capabilities
 
 ## 📞 Support
 
@@ -335,4 +402,4 @@ For technical support or questions:
 
 **Built with ❤️ for the food service industry**
 
-> This POS system is designed to be lightweight, fast, and reliable for daily restaurant operations.
+> This POS system is designed to be lightweight, fast, and reliable for daily restaurant operations with modern web technologies.
